@@ -1512,7 +1512,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8b21d5;
+  background: #1bff9c;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2138,4 +2138,7 @@ a.search-result {
 }
 .site-search form {
   display: none;
+}
+.site-author-image {
+  border-radius: 50%;
 }
