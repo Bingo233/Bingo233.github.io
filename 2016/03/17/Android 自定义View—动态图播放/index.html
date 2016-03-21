@@ -46,6 +46,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="Pantsu's Blog" type="application/atom+xml" />
 
@@ -75,7 +77,8 @@
 使用 Matrix 变换图像
 实现了播放 开始/暂停 的功能
 实现了对Canvas的二级缓存">
-<meta property="og:updated_time" content="2016-03-21T08:08:02.305Z">
+<meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog2015-3-21.jpg">
+<meta property="og:updated_time" content="2016-03-21T08:26:11.786Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一篇blog">
 <meta name="twitter:description" content="简介在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 自定义View—实现动态图播放 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：
@@ -84,6 +87,7 @@
 使用 Matrix 变换图像
 实现了播放 开始/暂停 的功能
 实现了对Canvas的二级缓存">
+<meta name="twitter:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog2015-3-21.jpg">
 
 
 
@@ -284,7 +288,7 @@
 <p>另外有两个方法与以上两个方法分别对应：</p>
 <ul>
 <li><strong>requestLayout()</strong>方法会使组件重新调用onMeasure()方法进行‘测量’</li>
-<li><strong>invalidate()</strong>方法会使组件调用onDraw()方法进行‘重绘’</li>
+<li><strong>invalidate()</strong>方法会使组件调用onDraw()方法进行‘重绘’<br><img src="http://7xs3wx.com1.z0.glb.clouddn.com/blog2015-3-21.jpg" alt=""></li>
 </ul>
 <p><br><br></p>
 <h1 id="进阶实现"><a href="#进阶实现" class="headerlink" title="进阶实现"></a>进阶实现</h1><h2 id="增加-ScaleType-属性"><a href="#增加-ScaleType-属性" class="headerlink" title="增加 ScaleType 属性"></a>增加 ScaleType 属性</h2><p>在ImageView的源码中，ScaleType作为一个内部枚举类，为ImageView提供了七种缩放类型，其中ScaleType.MATRIX最为灵活，可以通过setImageMatrix(Matrix matrix)方法设定自定义的矩阵变换。<br>主要思想：</p>
@@ -309,7 +313,7 @@
 <li><p>在 <strong>onDraw(Canvas canvas)</strong> 方法中调用 <strong>canvas.setMatrix(matrix)</strong> 导致图像显示异常，之后更换代码为 <strong>canvas.concatMatrix(matrix)</strong> 问题解决~ <br><br>猜测: 父级容器将设定好内置Matrix的canvas传递给各个子组件让其绘制自己，而问题代码覆盖了内置Matrix Orz~</p>
 </li>
 </ul>
-
+<h2 id="后续版本"><a href="#后续版本" class="headerlink" title="后续版本"></a>后续版本</h2>
       
     </div>
 
@@ -457,7 +461,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础实现"><span class="nav-number">2.</span> <span class="nav-text">基础实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进阶实现"><span class="nav-number">3.</span> <span class="nav-text">进阶实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#增加-ScaleType-属性"><span class="nav-number">3.1.</span> <span class="nav-text">增加 ScaleType 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Matrix变换"><span class="nav-number">3.2.</span> <span class="nav-text">使用Matrix变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-暂停播放"><span class="nav-number">3.3.</span> <span class="nav-text">实现 暂停播放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas-二级缓存"><span class="nav-number">3.4.</span> <span class="nav-text">Canvas 二级缓存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.1.</span> <span class="nav-text">遇到的问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础实现"><span class="nav-number">2.</span> <span class="nav-text">基础实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进阶实现"><span class="nav-number">3.</span> <span class="nav-text">进阶实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#增加-ScaleType-属性"><span class="nav-number">3.1.</span> <span class="nav-text">增加 ScaleType 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Matrix变换"><span class="nav-number">3.2.</span> <span class="nav-text">使用Matrix变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-暂停播放"><span class="nav-number">3.3.</span> <span class="nav-text">实现 暂停播放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas-二级缓存"><span class="nav-number">3.4.</span> <span class="nav-text">Canvas 二级缓存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.1.</span> <span class="nav-text">遇到的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续版本"><span class="nav-number">4.2.</span> <span class="nav-text">后续版本</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

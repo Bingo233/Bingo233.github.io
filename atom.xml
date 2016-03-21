@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-21T08:08:02.305Z</updated>
+  <updated>2016-03-21T08:26:11.786Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/03/17/Android%20%E8%87%AA%E5%AE%9A%E4%B9%89View%E2%80%94%E5%8A%A8%E6%80%81%E5%9B%BE%E6%92%AD%E6%94%BE/"/>
     <id>http://yoursite.com/2016/03/17/Android 自定义View—动态图播放/</id>
     <published>2016-03-17T06:58:57.000Z</published>
-    <updated>2016-03-21T08:08:02.305Z</updated>
+    <updated>2016-03-21T08:26:11.786Z</updated>
     
     <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 &lt;a href=&quot;http://www.jikexueyuan.com/course/1928.html&quot; title=&quot;http://www.jikexueyuan.com/course/1928.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;自定义View—实现动态图播放&lt;/a&gt; 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：&lt;/p&gt;
 &lt;ul&gt;
@@ -36,7 +36,7 @@
 &lt;p&gt;另外有两个方法与以上两个方法分别对应：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;requestLayout()&lt;/strong&gt;方法会使组件重新调用onMeasure()方法进行‘测量’&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;invalidate()&lt;/strong&gt;方法会使组件调用onDraw()方法进行‘重绘’&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;invalidate()&lt;/strong&gt;方法会使组件调用onDraw()方法进行‘重绘’&lt;br&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog2015-3-21.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&quot;进阶实现&quot;&gt;&lt;a href=&quot;#进阶实现&quot; class=&quot;headerlink&quot; title=&quot;进阶实现&quot;&gt;&lt;/a&gt;进阶实现&lt;/h1&gt;&lt;h2 id=&quot;增加-ScaleType-属性&quot;&gt;&lt;a href=&quot;#增加-ScaleType-属性&quot; class=&quot;headerlink&quot; title=&quot;增加 ScaleType 属性&quot;&gt;&lt;/a&gt;增加 ScaleType 属性&lt;/h2&gt;&lt;p&gt;在ImageView的源码中，ScaleType作为一个内部枚举类，为ImageView提供了七种缩放类型，其中ScaleType.MATRIX最为灵活，可以通过setImageMatrix(Matrix matrix)方法设定自定义的矩阵变换。&lt;br&gt;主要思想：&lt;/p&gt;
@@ -61,7 +61,7 @@
 &lt;li&gt;&lt;p&gt;在 &lt;strong&gt;onDraw(Canvas canvas)&lt;/strong&gt; 方法中调用 &lt;strong&gt;canvas.setMatrix(matrix)&lt;/strong&gt; 导致图像显示异常，之后更换代码为 &lt;strong&gt;canvas.concatMatrix(matrix)&lt;/strong&gt; 问题解决~ &lt;br&gt;&lt;br&gt;猜测: 父级容器将设定好内置Matrix的canvas传递给各个子组件让其绘制自己，而问题代码覆盖了内置Matrix Orz~&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</content>
+&lt;h2 id=&quot;后续版本&quot;&gt;&lt;a href=&quot;#后续版本&quot; class=&quot;headerlink&quot; title=&quot;后续版本&quot;&gt;&lt;/a&gt;后续版本&lt;/h2&gt;</content>
     
     <summary type="html">
     
