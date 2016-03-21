@@ -46,6 +46,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="Pantsu's Blog" type="application/atom+xml" />
 
@@ -75,7 +77,7 @@
 使用Matrix对图形变换进行优化
 实现了Canvas的二级缓存
 实现了播放开始/暂停的功能">
-<meta property="og:updated_time" content="2016-03-21T07:04:34.827Z">
+<meta property="og:updated_time" content="2016-03-21T07:10:35.230Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一篇blog">
 <meta name="twitter:description" content="简介在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 自定义View—实现动态图播放 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：
@@ -300,17 +302,10 @@
 </ol>
 <p>Matrix的 preXXX()方法和 postXXX()方法曾经让我疑惑，例如 preScale()方法：</p>
 <p>从线代计算角度来看，matrixA.preScale(b1, b2)表示前乘一个Scale操作的矩阵MatrixB，</p>
-<p>而效果上是将 MatrixB操作至于MatrixA之前，即 MatrixA –&gt; MatrixB –&gt; 。</p>
-<pre><code>/**
- * Preconcats the matrix with the specified scale.
- * M&apos; = M * S(sx, sy)
- */
-public boolean preScale(float sx, float sy) {
-    native_preScale(native_instance, sx, sy);
-    return true;
-}
-</code></pre><p>另外，MatrixA.set(MatrixB)会清空之前的矩阵序列，结果是只剩下 MatrixB –&gt; 。</p>
-<h2 id="Canvas-二级缓存"><a href="#Canvas-二级缓存" class="headerlink" title="Canvas 二级缓存"></a>Canvas 二级缓存</h2><h2 id="实现-暂停播放"><a href="#实现-暂停播放" class="headerlink" title="实现 暂停播放"></a>实现 暂停播放</h2>
+<p>而效果上是将 MatrixB操作至于MatrixA之前，即 MatrixA –&gt; MatrixB –&gt; 。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">    * Preconcats the matrix with the specified scale.</span><br><span class="line">    * M' = M * S(sx, sy)</span><br><span class="line">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preScale</span><span class="params">(<span class="keyword">float</span> sx, <span class="keyword">float</span> sy)</span> </span>&#123;</span><br><span class="line">       native_preScale(native_instance, sx, sy);</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>另外，MatrixA.set(MatrixB)会清空之前的矩阵序列，结果是只剩下 MatrixB –&gt; 。</p>
+<h2 id="Canvas-二级缓存"><a href="#Canvas-二级缓存" class="headerlink" title="Canvas 二级缓存"></a>Canvas 二级缓存</h2><p>在学习Java可视化编程时，接触过AWT和SWING，其中自定义View部分略为相似，同样是通过<strong>draw(Canvas canvas)</strong>方法在画布上绘制图像，当时跟随马士兵老师的Java视频做的项目中用到过画图的双缓冲机制。</p>
+<h2 id="实现-暂停播放"><a href="#实现-暂停播放" class="headerlink" title="实现 暂停播放"></a>实现 暂停播放</h2>
       
     </div>
 
