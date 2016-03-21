@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-21T11:17:16.815Z</updated>
+  <updated>2016-03-21T11:17:32.142Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/03/17/hello-world/"/>
+    <id>http://yoursite.com/2016/03/17/hello-world/</id>
+    <published>2016-03-17T06:58:57.000Z</published>
+    <updated>2016-03-21T11:17:32.142Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h2&gt;&lt;h5 id=&quot;在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot;&gt;&lt;a href=&quot;#在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot; class=&quot;headerlink&quot; title=&quot;在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot;&gt;&lt;/a&gt;在萌萌哒的舍友&lt;a href=&quot;&quot;&gt;丛九九&lt;/a&gt;的协助下，终于在学期开始搭好了自己的博客。&lt;/h5&gt;&lt;h5 id=&quot;感觉博客还缺点功能、少点链接什么的，会再改一改&quot;&gt;&lt;a href=&quot;#感觉博客还缺点功能、少点链接什么的，会再改一改&quot; class=&quot;headerlink&quot; title=&quot;感觉博客还缺点功能、少点链接什么的，会再改一改~&quot;&gt;&lt;/a&gt;感觉博客还缺点功能、少点链接什么的，会再改一改~&lt;/h5&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h5 id=&quot;以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&quot;&gt;&lt;a href=&quot;#以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&quot; class=&quot;headerlink&quot; title=&quot;以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&quot;&gt;&lt;/a&gt;以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&lt;/h5&gt;&lt;h5 id=&quot;有了博客的话，会逐渐向这边转移的&quot;&gt;&lt;a href=&quot;#有了博客的话，会逐渐向这边转移的&quot; class=&quot;headerlink&quot; title=&quot;有了博客的话，会逐渐向这边转移的~&quot;&gt;&lt;/a&gt;有了博客的话，会逐渐向这边转移的~&lt;/h5&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h2&gt;&lt;h5 id=&quot;在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot;&gt;&lt;a href=&quot;#在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot; class=&quot;headerlink&quot; title=&quot;在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot;&gt;&lt;/a&gt;在萌萌哒的舍友&lt;a href=&quot;&quot;&gt;丛九九&lt;/a&gt;的协助下，终于在学期开始搭好了自己的博客。&lt;/h5&gt;&lt;h5 id=&quot;感觉博客还缺点功能、少点链接什么的，会再改一改&quot;&gt;&lt;a href=&quot;#感觉博客还缺点功能、少点链接什么的，会再改一改&quot; class=&quot;headerlink&quot; title=&quot;感觉博客还缺点功能、少点链接什么的，会再改一改~&quot;&gt;&lt;/a&gt;感觉博客还缺点功能、少点链接什么的，会再改一改~&lt;/h5&gt;
+    
+    </summary>
+    
+      <category term="other" scheme="http://yoursite.com/categories/other/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Android 自定义View—动态图播放</title>
@@ -81,27 +102,6 @@
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
       <category term="组件" scheme="http://yoursite.com/tags/%E7%BB%84%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/03/17/hello-world/"/>
-    <id>http://yoursite.com/2016/03/17/hello-world/</id>
-    <published>2016-03-17T06:58:57.000Z</published>
-    <updated>2016-03-21T11:17:32.142Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h2&gt;&lt;h5 id=&quot;在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot;&gt;&lt;a href=&quot;#在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot; class=&quot;headerlink&quot; title=&quot;在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot;&gt;&lt;/a&gt;在萌萌哒的舍友&lt;a href=&quot;&quot;&gt;丛九九&lt;/a&gt;的协助下，终于在学期开始搭好了自己的博客。&lt;/h5&gt;&lt;h5 id=&quot;感觉博客还缺点功能、少点链接什么的，会再改一改&quot;&gt;&lt;a href=&quot;#感觉博客还缺点功能、少点链接什么的，会再改一改&quot; class=&quot;headerlink&quot; title=&quot;感觉博客还缺点功能、少点链接什么的，会再改一改~&quot;&gt;&lt;/a&gt;感觉博客还缺点功能、少点链接什么的，会再改一改~&lt;/h5&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h5 id=&quot;以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&quot;&gt;&lt;a href=&quot;#以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&quot; class=&quot;headerlink&quot; title=&quot;以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&quot;&gt;&lt;/a&gt;以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&lt;/h5&gt;&lt;h5 id=&quot;有了博客的话，会逐渐向这边转移的&quot;&gt;&lt;a href=&quot;#有了博客的话，会逐渐向这边转移的&quot; class=&quot;headerlink&quot; title=&quot;有了博客的话，会逐渐向这边转移的~&quot;&gt;&lt;/a&gt;有了博客的话，会逐渐向这边转移的~&lt;/h5&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h2&gt;&lt;h5 id=&quot;在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot;&gt;&lt;a href=&quot;#在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot; class=&quot;headerlink&quot; title=&quot;在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot;&gt;&lt;/a&gt;在萌萌哒的舍友&lt;a href=&quot;&quot;&gt;丛九九&lt;/a&gt;的协助下，终于在学期开始搭好了自己的博客。&lt;/h5&gt;&lt;h5 id=&quot;感觉博客还缺点功能、少点链接什么的，会再改一改&quot;&gt;&lt;a href=&quot;#感觉博客还缺点功能、少点链接什么的，会再改一改&quot; class=&quot;headerlink&quot; title=&quot;感觉博客还缺点功能、少点链接什么的，会再改一改~&quot;&gt;&lt;/a&gt;感觉博客还缺点功能、少点链接什么的，会再改一改~&lt;/h5&gt;
-    
-    </summary>
-    
-      <category term="other" scheme="http://yoursite.com/categories/other/"/>
-    
     
   </entry>
   
