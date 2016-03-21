@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-21T11:10:29.990Z</updated>
+  <updated>2016-03-21T11:17:32.142Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/03/17/hello-world/"/>
     <id>http://yoursite.com/2016/03/17/hello-world/</id>
     <published>2016-03-17T06:58:57.000Z</published>
-    <updated>2016-03-21T11:10:29.990Z</updated>
+    <updated>2016-03-21T11:17:32.142Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h2&gt;&lt;h5 id=&quot;在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot;&gt;&lt;a href=&quot;#在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot; class=&quot;headerlink&quot; title=&quot;在萌萌哒的舍友丛九九的协助下，终于在学期开始搭好了自己的博客。&quot;&gt;&lt;/a&gt;在萌萌哒的舍友&lt;a href=&quot;&quot;&gt;丛九九&lt;/a&gt;的协助下，终于在学期开始搭好了自己的博客。&lt;/h5&gt;&lt;h5 id=&quot;感觉博客还缺点功能、少点链接什么的，会再改一改&quot;&gt;&lt;a href=&quot;#感觉博客还缺点功能、少点链接什么的，会再改一改&quot; class=&quot;headerlink&quot; title=&quot;感觉博客还缺点功能、少点链接什么的，会再改一改~&quot;&gt;&lt;/a&gt;感觉博客还缺点功能、少点链接什么的，会再改一改~&lt;/h5&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h5 id=&quot;以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&quot;&gt;&lt;a href=&quot;#以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&quot; class=&quot;headerlink&quot; title=&quot;以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&quot;&gt;&lt;/a&gt;以前学习Android写一些小组件什么的，会把感想或总结写在为知笔记里。&lt;/h5&gt;&lt;h5 id=&quot;有了博客的话，会逐渐向这边转移的&quot;&gt;&lt;a href=&quot;#有了博客的话，会逐渐向这边转移的&quot; class=&quot;headerlink&quot; title=&quot;有了博客的话，会逐渐向这边转移的~&quot;&gt;&lt;/a&gt;有了博客的话，会逐渐向这边转移的~&lt;/h5&gt;</content>
@@ -31,6 +31,8 @@
     
     </summary>
     
+      <category term="other" scheme="http://yoursite.com/categories/other/"/>
+    
     
   </entry>
   
@@ -39,7 +41,7 @@
     <link href="http://yoursite.com/2016/03/17/Android%20%E8%87%AA%E5%AE%9A%E4%B9%89View%E2%80%94%E5%8A%A8%E6%80%81%E5%9B%BE%E6%92%AD%E6%94%BE/"/>
     <id>http://yoursite.com/2016/03/17/Android 自定义View—动态图播放/</id>
     <published>2016-03-17T06:58:57.000Z</published>
-    <updated>2016-03-21T10:57:21.761Z</updated>
+    <updated>2016-03-21T11:17:16.815Z</updated>
     
     <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 &lt;a href=&quot;http://www.jikexueyuan.com/course/1928.html&quot; title=&quot;http://www.jikexueyuan.com/course/1928.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;自定义View—实现动态图播放&lt;/a&gt; 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：&lt;/p&gt;
 &lt;ul&gt;
@@ -93,6 +95,8 @@
 &lt;li&gt;实现了对Canvas的二级缓存
     
     </summary>
+    
+      <category term="android" scheme="http://yoursite.com/categories/android/"/>
     
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
