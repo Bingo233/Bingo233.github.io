@@ -78,7 +78,7 @@
 实现了播放 开始/暂停 的功能
 实现了对Canvas的二级缓存">
 <meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog2015-3-21.jpg">
-<meta property="og:updated_time" content="2016-03-21T08:35:55.507Z">
+<meta property="og:updated_time" content="2016-03-21T08:37:12.866Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一篇blog">
 <meta name="twitter:description" content="简介在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 自定义View—实现动态图播放 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：
@@ -280,8 +280,9 @@
 <li>使用 <strong>Matrix</strong> 变换图像</li>
 <li>实现了播放 开始/暂停 的功能</li>
 <li>实现了对Canvas的二级缓存<a id="more"></a>
-<br><br><strong>献上我的膝盖 - Github</strong>： <a href="https://github.com/Pantsu-It/ProjectForLearn" title="https://github.com/Pantsu-It/ProjectForLearn" target="_blank" rel="external">https://github.com/Pantsu-It/ProjectForLearn</a></li>
+</li>
 </ul>
+<p><br><br><strong>献上我的膝盖 - Github</strong>： <a href="https://github.com/Pantsu-It/ProjectForLearn" title="https://github.com/Pantsu-It/ProjectForLearn" target="_blank" rel="external">https://github.com/Pantsu-It/ProjectForLearn</a></p>
 <h1 id="基础实现"><a href="#基础实现" class="headerlink" title="基础实现"></a>基础实现</h1><p>自定义View实现主要是重写 onMeasure() 和 onDraw() 两个方法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span></span></span><br></pre></td></tr></table></figure></p>
 <p>其中 <strong>onMeasure()</strong> 方法负责通过父级组件传入的两个参数计算得到并设置正确的宽高值，<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义部件建议加入一下两行代码</span></span><br><span class="line">w = Math.max(w, getSuggestedMinimumWidth());</span><br><span class="line">h = Math.max(h, getSuggestedMinimumHeight());</span><br><span class="line"></span><br><span class="line">widthSize = resolveSizeAndState(w, widthMeasureSpec, <span class="number">0</span>);</span><br><span class="line">heightSize = resolveSizeAndState(w, heightMeasureSpec, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">ratioWidth = (<span class="keyword">float</span>) widthSize / w;</span><br><span class="line">ratioHeight = (<span class="keyword">float</span>) heightSize / h;</span><br><span class="line"></span><br><span class="line">setMeasuredDimension(widthSize, heightSize);</span><br></pre></td></tr></table></figure></p>
 <p>而 <strong>onDraw()</strong> 方法 负责绘制自己的图像。</p>
