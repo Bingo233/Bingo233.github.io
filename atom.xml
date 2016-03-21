@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-21T06:16:56.871Z</updated>
+  <updated>2016-03-21T07:04:34.827Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,36 +20,59 @@
     <link href="http://yoursite.com/2016/03/17/Android%20%E8%87%AA%E5%AE%9A%E4%B9%89View%E2%80%94%E5%8A%A8%E6%80%81%E5%9B%BE%E6%92%AD%E6%94%BE/"/>
     <id>http://yoursite.com/2016/03/17/Android 自定义View—动态图播放/</id>
     <published>2016-03-17T06:58:57.000Z</published>
-    <updated>2016-03-21T06:16:56.871Z</updated>
+    <updated>2016-03-21T07:04:34.827Z</updated>
     
     <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 &lt;a href=&quot;http://www.jikexueyuan.com/course/1928.html&quot; title=&quot;http://www.jikexueyuan.com/course/1928.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;自定义View—实现动态图播放&lt;/a&gt; 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：&lt;/p&gt;
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;增加了 scaleType 属性&lt;/li&gt;
 &lt;li&gt;使用Matrix对图形变换进行优化&lt;/li&gt;
-&lt;li&gt;实现了播放开始/暂停的功能&lt;/li&gt;
 &lt;li&gt;实现了Canvas的二级缓存&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;实现了播放开始/暂停的功能&lt;/li&gt;
+&lt;/ul&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;基础实现&quot;&gt;&lt;a href=&quot;#基础实现&quot; class=&quot;headerlink&quot; title=&quot;基础实现&quot;&gt;&lt;/a&gt;基础实现&lt;/h1&gt;&lt;p&gt;自定义View实现主要是重写 onMeasure() 和 onDraw() 两个方法:&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onMeasure&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; widthMeasureSpec, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; heightMeasureSpec)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onDraw&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Canvas canvas)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;其中onMeasure()方法负责通过父级组件传入的两个参数计算得到并设置正确的宽高值，&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 自定义部件建议加入一下两行代码&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;w = Math.max(w, getSuggestedMinimumWidth());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;h = Math.max(h, getSuggestedMinimumHeight());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;widthSize = resolveSizeAndState(w, widthMeasureSpec, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;heightSize = resolveSizeAndState(w, heightMeasureSpec, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ratioWidth = (&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;) widthSize / w;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ratioHeight = (&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;) heightSize / h;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;setMeasuredDimension(widthSize, heightSize);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;而onDraw方法 负责绘制自己的图像。&lt;/p&gt;
 &lt;p&gt;另外有两个方法与以上两个方法分别对应：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;requestLayout()方法会使组件重新调用onMeasure()方法进行‘测量’&lt;/li&gt;
-&lt;li&gt;invalidate()方法会使组件调用onDraw()方法进行‘重绘’&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;requestLayout()&lt;/strong&gt;方法会使组件重新调用onMeasure()方法进行‘测量’&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;invalidate()&lt;/strong&gt;方法会使组件调用onDraw()方法进行‘重绘’&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
-&lt;h1 id=&quot;进阶实现&quot;&gt;&lt;a href=&quot;#进阶实现&quot; class=&quot;headerlink&quot; title=&quot;进阶实现&quot;&gt;&lt;/a&gt;进阶实现&lt;/h1&gt;</content>
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&quot;进阶实现&quot;&gt;&lt;a href=&quot;#进阶实现&quot; class=&quot;headerlink&quot; title=&quot;进阶实现&quot;&gt;&lt;/a&gt;进阶实现&lt;/h1&gt;&lt;h2 id=&quot;增加-ScaleType-属性&quot;&gt;&lt;a href=&quot;#增加-ScaleType-属性&quot; class=&quot;headerlink&quot; title=&quot;增加 ScaleType 属性&quot;&gt;&lt;/a&gt;增加 ScaleType 属性&lt;/h2&gt;&lt;p&gt;在ImageView的源码中，ScaleType作为一个内部枚举类，为ImageView提供了七种缩放类型，其中ScaleType.MATRIX最为灵活，可以通过setImageMatrix(Matrix matrix)方法设定自定义的矩阵变换。&lt;br&gt;主要思想：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先在onMeasure()方法中取得图片相对空间宽高的比例&lt;/li&gt;
+&lt;li&gt;在 configureMatrix()方法中计算并获得变换矩阵mScaleMatrix&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在 onDraw()方法中通过 canvas.cancat(mScaleMatrix)应用矩阵变换 &lt;/p&gt;
+&lt;h2 id=&quot;使用Matrix变换&quot;&gt;&lt;a href=&quot;#使用Matrix变换&quot; class=&quot;headerlink&quot; title=&quot;使用Matrix变换&quot;&gt;&lt;/a&gt;使用Matrix变换&lt;/h2&gt;&lt;p&gt;最开始并没有想到用Matrix来实施变换，只是用一些canvas的简单方法：&lt;/p&gt;
+&lt;p&gt; canvas.scale()&lt;br&gt; canvas.translate()&lt;br&gt; canvas.skew()&lt;br&gt; canvas.rotate()&lt;br&gt;后来在做多重变换时就无法满足要求，参考了ImageView源码后决定采用Matrix:&lt;/p&gt;
+&lt;p&gt; matrix.setScale()  matrix.setTranslate() matrix.setXXX()&lt;br&gt; matrix.preScale()  matrix.preTranslate() …&lt;br&gt; matrix.postXXX()   …&lt;/p&gt;
+&lt;p&gt; matrix.setConcat()&lt;br&gt; matrix.preConcat()&lt;br&gt; matrix.postConcat()&lt;br&gt;注：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Matrix的 preXXX()方法和 postXXX()方法曾经让我疑惑，例如 preScale()方法：&lt;/p&gt;
+&lt;p&gt;从线代计算角度来看，matrixA.preScale(b1, b2)表示前乘一个Scale操作的矩阵MatrixB，&lt;/p&gt;
+&lt;p&gt;而效果上是将 MatrixB操作至于MatrixA之前，即 MatrixA –&amp;gt; MatrixB –&amp;gt; 。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/**
+ * Preconcats the matrix with the specified scale.
+ * M&amp;apos; = M * S(sx, sy)
+ */
+public boolean preScale(float sx, float sy) {
+    native_preScale(native_instance, sx, sy);
+    return true;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;另外，MatrixA.set(MatrixB)会清空之前的矩阵序列，结果是只剩下 MatrixB –&amp;gt; 。&lt;/p&gt;
+&lt;h2 id=&quot;Canvas-二级缓存&quot;&gt;&lt;a href=&quot;#Canvas-二级缓存&quot; class=&quot;headerlink&quot; title=&quot;Canvas 二级缓存&quot;&gt;&lt;/a&gt;Canvas 二级缓存&lt;/h2&gt;&lt;h2 id=&quot;实现-暂停播放&quot;&gt;&lt;a href=&quot;#实现-暂停播放&quot; class=&quot;headerlink&quot; title=&quot;实现 暂停播放&quot;&gt;&lt;/a&gt;实现 暂停播放&lt;/h2&gt;</content>
     
     <summary type="html">
     
       &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 &lt;a href=&quot;http://www.jikexueyuan.com/course/1928.html&quot; title=&quot;http://www.jikexueyuan.com/course/1928.html&quot;&gt;自定义View—实现动态图播放&lt;/a&gt; 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：&lt;/p&gt;
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;增加了 scaleType 属性&lt;/li&gt;
 &lt;li&gt;使用Matrix对图形变换进行优化&lt;/li&gt;
-&lt;li&gt;实现了播放开始/暂停的功能&lt;/li&gt;
 &lt;li&gt;实现了Canvas的二级缓存&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;实现了播放开始/暂停的功能&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     

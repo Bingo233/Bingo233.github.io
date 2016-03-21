@@ -46,8 +46,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="Pantsu's Blog" type="application/atom+xml" />
 
@@ -65,8 +63,8 @@
 
 增加了 scaleType 属性
 使用Matrix对图形变换进行优化
-实现了播放开始/暂停的功能
-实现了Canvas的二级缓存">
+实现了Canvas的二级缓存
+实现了播放开始/暂停的功能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第一篇blog">
 <meta property="og:url" content="http://yoursite.com/2016/03/17/Android 自定义View—动态图播放/index.html">
@@ -75,17 +73,17 @@
 
 增加了 scaleType 属性
 使用Matrix对图形变换进行优化
-实现了播放开始/暂停的功能
-实现了Canvas的二级缓存">
-<meta property="og:updated_time" content="2016-03-21T06:16:56.871Z">
+实现了Canvas的二级缓存
+实现了播放开始/暂停的功能">
+<meta property="og:updated_time" content="2016-03-21T07:04:34.827Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一篇blog">
 <meta name="twitter:description" content="简介在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 自定义View—实现动态图播放 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：
 
 增加了 scaleType 属性
 使用Matrix对图形变换进行优化
-实现了播放开始/暂停的功能
-实现了Canvas的二级缓存">
+实现了Canvas的二级缓存
+实现了播放开始/暂停的功能">
 
 
 
@@ -273,23 +271,46 @@
 
       
         <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 <a href="http://www.jikexueyuan.com/course/1928.html" title="http://www.jikexueyuan.com/course/1928.html" target="_blank" rel="external">自定义View—实现动态图播放</a> 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：</p>
-<ol>
+<ul>
 <li>增加了 scaleType 属性</li>
 <li>使用Matrix对图形变换进行优化</li>
-<li>实现了播放开始/暂停的功能</li>
 <li>实现了Canvas的二级缓存</li>
-</ol>
+<li>实现了播放开始/暂停的功能</li>
+</ul>
 <a id="more"></a>
 <h1 id="基础实现"><a href="#基础实现" class="headerlink" title="基础实现"></a>基础实现</h1><p>自定义View实现主要是重写 onMeasure() 和 onDraw() 两个方法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span></span></span><br></pre></td></tr></table></figure></p>
 <p>其中onMeasure()方法负责通过父级组件传入的两个参数计算得到并设置正确的宽高值，<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义部件建议加入一下两行代码</span></span><br><span class="line">w = Math.max(w, getSuggestedMinimumWidth());</span><br><span class="line">h = Math.max(h, getSuggestedMinimumHeight());</span><br><span class="line"></span><br><span class="line">widthSize = resolveSizeAndState(w, widthMeasureSpec, <span class="number">0</span>);</span><br><span class="line">heightSize = resolveSizeAndState(w, heightMeasureSpec, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">ratioWidth = (<span class="keyword">float</span>) widthSize / w;</span><br><span class="line">ratioHeight = (<span class="keyword">float</span>) heightSize / h;</span><br><span class="line"></span><br><span class="line">setMeasuredDimension(widthSize, heightSize);</span><br></pre></td></tr></table></figure></p>
 <p>而onDraw方法 负责绘制自己的图像。</p>
 <p>另外有两个方法与以上两个方法分别对应：</p>
 <ul>
-<li>requestLayout()方法会使组件重新调用onMeasure()方法进行‘测量’</li>
-<li>invalidate()方法会使组件调用onDraw()方法进行‘重绘’</li>
+<li><strong>requestLayout()</strong>方法会使组件重新调用onMeasure()方法进行‘测量’</li>
+<li><strong>invalidate()</strong>方法会使组件调用onDraw()方法进行‘重绘’</li>
 </ul>
-<p><hr></p>
-<h1 id="进阶实现"><a href="#进阶实现" class="headerlink" title="进阶实现"></a>进阶实现</h1>
+<p><br><br></p>
+<h1 id="进阶实现"><a href="#进阶实现" class="headerlink" title="进阶实现"></a>进阶实现</h1><h2 id="增加-ScaleType-属性"><a href="#增加-ScaleType-属性" class="headerlink" title="增加 ScaleType 属性"></a>增加 ScaleType 属性</h2><p>在ImageView的源码中，ScaleType作为一个内部枚举类，为ImageView提供了七种缩放类型，其中ScaleType.MATRIX最为灵活，可以通过setImageMatrix(Matrix matrix)方法设定自定义的矩阵变换。<br>主要思想：</p>
+<ol>
+<li>首先在onMeasure()方法中取得图片相对空间宽高的比例</li>
+<li>在 configureMatrix()方法中计算并获得变换矩阵mScaleMatrix</li>
+<li><p>在 onDraw()方法中通过 canvas.cancat(mScaleMatrix)应用矩阵变换 </p>
+<h2 id="使用Matrix变换"><a href="#使用Matrix变换" class="headerlink" title="使用Matrix变换"></a>使用Matrix变换</h2><p>最开始并没有想到用Matrix来实施变换，只是用一些canvas的简单方法：</p>
+<p> canvas.scale()<br> canvas.translate()<br> canvas.skew()<br> canvas.rotate()<br>后来在做多重变换时就无法满足要求，参考了ImageView源码后决定采用Matrix:</p>
+<p> matrix.setScale()  matrix.setTranslate() matrix.setXXX()<br> matrix.preScale()  matrix.preTranslate() …<br> matrix.postXXX()   …</p>
+<p> matrix.setConcat()<br> matrix.preConcat()<br> matrix.postConcat()<br>注：</p>
+</li>
+</ol>
+<p>Matrix的 preXXX()方法和 postXXX()方法曾经让我疑惑，例如 preScale()方法：</p>
+<p>从线代计算角度来看，matrixA.preScale(b1, b2)表示前乘一个Scale操作的矩阵MatrixB，</p>
+<p>而效果上是将 MatrixB操作至于MatrixA之前，即 MatrixA –&gt; MatrixB –&gt; 。</p>
+<pre><code>/**
+ * Preconcats the matrix with the specified scale.
+ * M&apos; = M * S(sx, sy)
+ */
+public boolean preScale(float sx, float sy) {
+    native_preScale(native_instance, sx, sy);
+    return true;
+}
+</code></pre><p>另外，MatrixA.set(MatrixB)会清空之前的矩阵序列，结果是只剩下 MatrixB –&gt; 。</p>
+<h2 id="Canvas-二级缓存"><a href="#Canvas-二级缓存" class="headerlink" title="Canvas 二级缓存"></a>Canvas 二级缓存</h2><h2 id="实现-暂停播放"><a href="#实现-暂停播放" class="headerlink" title="实现 暂停播放"></a>实现 暂停播放</h2>
       
     </div>
 
@@ -437,7 +458,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础实现"><span class="nav-number">2.</span> <span class="nav-text">基础实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进阶实现"><span class="nav-number">3.</span> <span class="nav-text">进阶实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础实现"><span class="nav-number">2.</span> <span class="nav-text">基础实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进阶实现"><span class="nav-number">3.</span> <span class="nav-text">进阶实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#增加-ScaleType-属性"><span class="nav-number">3.1.</span> <span class="nav-text">增加 ScaleType 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Matrix变换"><span class="nav-number">3.2.</span> <span class="nav-text">使用Matrix变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas-二级缓存"><span class="nav-number">3.3.</span> <span class="nav-text">Canvas 二级缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-暂停播放"><span class="nav-number">3.4.</span> <span class="nav-text">实现 暂停播放</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
