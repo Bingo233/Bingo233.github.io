@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="android,组件," />
+  <meta name="keywords" content="组件,Android," />
 
 
 
@@ -76,7 +76,7 @@
 实现了播放 开始/暂停 的功能
 实现了对Canvas的二级缓存">
 <meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog2015-3-21.jpg">
-<meta property="og:updated_time" content="2016-03-21T11:17:16.815Z">
+<meta property="og:updated_time" content="2016-03-22T04:24:55.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 自定义View—动态图播放">
 <meta name="twitter:description" content="简介在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 自定义View—实现动态图播放 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：
@@ -299,8 +299,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -378,7 +378,12 @@
 <li><p>在 <strong>onDraw(Canvas canvas)</strong> 方法中调用 <strong>canvas.setMatrix(matrix)</strong> 导致图像显示异常，之后更换代码为 <strong>canvas.concatMatrix(matrix)</strong> 问题解决~ <br><br>猜测: 父级容器将设定好内置Matrix的canvas传递给各个子组件让其绘制自己，而问题代码覆盖了内置Matrix Orz~</p>
 </li>
 </ul>
-<h2 id="后续版本"><a href="#后续版本" class="headerlink" title="后续版本"></a>后续版本</h2>
+<h2 id="后续版本"><a href="#后续版本" class="headerlink" title="后续版本"></a>后续版本</h2><ul>
+<li>尝试兼容一般图片 【已尝试过使用 Movie类 解析静态图片的数据流，返回为null</li>
+<li>在onMeasure()方法中，让View支持 <strong>wrap_content</strong> 属性</li>
+<li>在onDraw()方法中，处理 <strong>padding</strong> 属性</li>
+</ul>
+
       
     </div>
 
@@ -392,9 +397,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/android/" rel="tag">#android</a>
-          
             <a href="/tags/组件/" rel="tag">#组件</a>
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
         </div>
       
@@ -508,7 +513,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -517,7 +522,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
