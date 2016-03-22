@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-22T04:24:55.743Z</updated>
+  <updated>2016-03-22T06:00:21.956Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android 图标角标数字显示—未读通知</title>
+    <link href="http://yoursite.com/2016/03/22/Android%20%E5%9B%BE%E6%A0%87%E8%A7%92%E6%A0%87%E6%95%B0%E5%AD%97%E6%98%BE%E7%A4%BA%E2%80%94%E6%9C%AA%E8%AF%BB%E9%80%9A%E7%9F%A5/"/>
+    <id>http://yoursite.com/2016/03/22/Android 图标角标数字显示—未读通知/</id>
+    <published>2016-03-22T05:53:22.000Z</published>
+    <updated>2016-03-22T06:00:21.956Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过一次解决办法，很多博客上&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过一次解决办法，很多博客上&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="图标" scheme="http://yoursite.com/tags/%E5%9B%BE%E6%A0%87/"/>
+    
+  </entry>
   
   <entry>
     <title>Android 自定义View—动态图播放</title>

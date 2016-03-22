@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,组件," />
+  <meta name="keywords" content="Android,图标," />
 
 
 
@@ -59,33 +59,16 @@
 
 
 
-<meta name="description" content="简介在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 自定义View—实现动态图播放 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：
-
-增加 scaleType 属性
-使用 Matrix 变换图像
-实现了播放 开始/暂停 的功能
-实现了对Canvas的二级缓存">
+<meta name="description" content="简介很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过一次解决办法，很多博客上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 自定义View—动态图播放">
-<meta property="og:url" content="http://yoursite.com/2016/03/17/Android 自定义View—动态图播放/index.html">
+<meta property="og:title" content="Android 图标角标数字显示—未读通知">
+<meta property="og:url" content="http://yoursite.com/2016/03/22/Android 图标角标数字显示—未读通知/index.html">
 <meta property="og:site_name" content="Pantsu's Blog">
-<meta property="og:description" content="简介在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 自定义View—实现动态图播放 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：
-
-增加 scaleType 属性
-使用 Matrix 变换图像
-实现了播放 开始/暂停 的功能
-实现了对Canvas的二级缓存">
-<meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog2015-3-21.jpg">
-<meta property="og:updated_time" content="2016-03-22T04:24:55.743Z">
+<meta property="og:description" content="简介很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过一次解决办法，很多博客上">
+<meta property="og:updated_time" content="2016-03-22T06:00:21.956Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 自定义View—动态图播放">
-<meta name="twitter:description" content="简介在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 自定义View—实现动态图播放 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：
-
-增加 scaleType 属性
-使用 Matrix 变换图像
-实现了播放 开始/暂停 的功能
-实现了对Canvas的二级缓存">
-<meta name="twitter:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog2015-3-21.jpg">
+<meta name="twitter:title" content="Android 图标角标数字显示—未读通知">
+<meta name="twitter:description" content="简介很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过一次解决办法，很多博客上">
 
 
 
@@ -103,7 +86,7 @@
   };
 </script>
 
-  <title> Android 自定义View—动态图播放 | Pantsu's Blog </title>
+  <title> Android 图标角标数字显示—未读通知 | Pantsu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +256,7 @@
             
             
               
-                Android 自定义View—动态图播放
+                Android 图标角标数字显示—未读通知
               
             
           </h1>
@@ -285,8 +268,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-17T14:58:57+08:00" content="2016-03-17">
-              2016-03-17
+            <time itemprop="dateCreated" datetime="2016-03-22T13:53:22+08:00" content="2016-03-22">
+              2016-03-22
             </time>
           </span>
 
@@ -315,8 +298,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/17/Android 自定义View—动态图播放/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/17/Android 自定义View—动态图播放/" itemprop="commentsCount"></span>
+                <a href="/2016/03/22/Android 图标角标数字显示—未读通知/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/22/Android 图标角标数字显示—未读通知/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -338,51 +321,7 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>在《Android开发艺术探索》一书中，讲到自定义View和ViewGroup的方法，之后在 极客学院 学习了 <a href="http://www.jikexueyuan.com/course/1928.html" title="http://www.jikexueyuan.com/course/1928.html" target="_blank" rel="external">自定义View—实现动态图播放</a> 之后，参照ImageView的源码，对自定义组件GifView进行了一下改动：</p>
-<ul>
-<li>增加 <strong>scaleType</strong> 属性</li>
-<li>使用 <strong>Matrix</strong> 变换图像</li>
-<li>实现了播放 开始/暂停 的功能</li>
-<li>实现了对Canvas的二级缓存<a id="more"></a>
-</li>
-</ul>
-<p><strong>献上我的膝盖 - Github</strong>： <a href="https://github.com/Pantsu-It/ProjectForLearn" title="https://github.com/Pantsu-It/ProjectForLearn" target="_blank" rel="external">https://github.com/Pantsu-It/ProjectForLearn</a></p>
-<h1 id="基础实现"><a href="#基础实现" class="headerlink" title="基础实现"></a>基础实现</h1><p>自定义View实现主要是重写 onMeasure() 和 onDraw() 两个方法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span></span></span><br></pre></td></tr></table></figure></p>
-<p>其中 <strong>onMeasure()</strong> 方法负责通过父级组件传入的两个参数计算得到并设置正确的宽高值，<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义部件建议加入一下两行代码</span></span><br><span class="line">w = Math.max(w, getSuggestedMinimumWidth());</span><br><span class="line">h = Math.max(h, getSuggestedMinimumHeight());</span><br><span class="line"></span><br><span class="line">widthSize = resolveSizeAndState(w, widthMeasureSpec, <span class="number">0</span>);</span><br><span class="line">heightSize = resolveSizeAndState(w, heightMeasureSpec, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">ratioWidth = (<span class="keyword">float</span>) widthSize / w;</span><br><span class="line">ratioHeight = (<span class="keyword">float</span>) heightSize / h;</span><br><span class="line"></span><br><span class="line">setMeasuredDimension(widthSize, heightSize);</span><br></pre></td></tr></table></figure></p>
-<p>而 <strong>onDraw()</strong> 方法 负责绘制自己的图像。</p>
-<p>另外有两个方法与以上两个方法分别对应：</p>
-<ul>
-<li><strong>requestLayout()</strong>方法会使组件重新调用onMeasure()方法进行‘测量’</li>
-<li><strong>invalidate()</strong>方法会使组件调用onDraw()方法进行‘重绘’<br><br><br><img src="http://7xs3wx.com1.z0.glb.clouddn.com/blog2015-3-21.jpg" alt=""></li>
-</ul>
-<p><br><br></p>
-<h1 id="进阶实现"><a href="#进阶实现" class="headerlink" title="进阶实现"></a>进阶实现</h1><h2 id="增加-ScaleType-属性"><a href="#增加-ScaleType-属性" class="headerlink" title="增加 ScaleType 属性"></a>增加 ScaleType 属性</h2><p>在ImageView的源码中，ScaleType作为一个内部枚举类，为ImageView提供了七种缩放类型，其中ScaleType.MATRIX最为灵活，可以通过setImageMatrix(Matrix matrix)方法设定自定义的矩阵变换。<br>主要思想：</p>
-<ol>
-<li>首先在onMeasure()方法中取得图片相对空间宽高的比例</li>
-<li>在 configureMatrix()方法中计算并获得变换矩阵mScaleMatrix</li>
-<li>在 onDraw()方法中通过 canvas.cancat(mScaleMatrix)应用矩阵变换 </li>
-</ol>
-<h2 id="使用Matrix变换"><a href="#使用Matrix变换" class="headerlink" title="使用Matrix变换"></a>使用Matrix变换</h2><p>最开始并没有想到用Matrix来实施变换，只是用一些canvas的简单方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">canvas.scale()</span><br><span class="line">canvas.translate()</span><br><span class="line">canvas.skew()</span><br><span class="line">canvas.rotate()</span><br></pre></td></tr></table></figure></p>
-<p>后来在做多重变换时就无法满足要求，参考了ImageView源码后决定采用Matrix:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">matrix.setScale()  matrix.setTranslate() matrix.setXXX()</span><br><span class="line">matrix.preScale()  matrix.preTranslate() ...</span><br><span class="line">matrix.postXXX()   ...</span><br><span class="line"></span><br><span class="line">matrix.setConcat()</span><br><span class="line">matrix.preConcat()</span><br><span class="line">matrix.postConcat()</span><br></pre></td></tr></table></figure></p>
-<p>注：</p>
-<p>Matrix的 preXXX()方法和 postXXX()方法曾经让我疑惑，例如 preScale()方法：</p>
-<p>从线代计算角度来看，matrixA.preScale(b1, b2)表示前乘一个Scale操作的矩阵MatrixB，</p>
-<p>而效果上是将 MatrixB操作至于MatrixA之前，即 MatrixA –&gt; MatrixB –&gt; 。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Preconcats the matrix with the specified scale.</span><br><span class="line"> * M' = M * S(sx, sy)</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preScale</span><span class="params">(<span class="keyword">float</span> sx, <span class="keyword">float</span> sy)</span> </span>&#123;</span><br><span class="line">	native_preScale(native_instance, sx, sy);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>另外，MatrixA.set(MatrixB)会清空之前的矩阵序列，结果是只剩下 MatrixB –&gt; 。</p>
-<h2 id="实现-暂停播放"><a href="#实现-暂停播放" class="headerlink" title="实现 暂停播放"></a>实现 暂停播放</h2><p>解析Gif图片的基本原理就是用 <strong>android.graphics.Movie</strong> 类加载图片文件数据流，并通过 <strong>mMovie.setTime(long time)</strong> 设定时间点，在 <strong>mMovie.draw(Canvas, 0, 0)</strong> 时将时间点 <strong>time</strong> 处的图像绘制到 <strong>canvas</strong> 上，因此，只要在暂停时保存断点 <strong>time</strong> 并在播放时恢复断点 <strong>time</strong>即可~</p>
-<h2 id="Canvas-二级缓存"><a href="#Canvas-二级缓存" class="headerlink" title="Canvas 二级缓存"></a>Canvas 二级缓存</h2><p>在想到为了预览或者实现QQ滑动时暂停播放的效果，有必要实现暂停播放，而此时在onDraw(Canvas canvas)方法重绘过程中依旧会通过 mMovie 解析数据流，因此有必要实现双缓冲来对绘制实现优化：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化用于缓冲的 Bitmap 和 Canvas</span></span><br><span class="line"><span class="keyword">if</span> (cacheBitmap == <span class="keyword">null</span>) &#123;</span><br><span class="line">	cacheBitmap = Bitmap.createBitmap(widthSize, heightSize, Bitmap.Config.ARGB_8888);</span><br><span class="line">    cacheCanvas = <span class="keyword">new</span> Canvas(cacheBitmap);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当图像更新时，mMovie将通过cacheCanvas绘制到cacheBitmap上</span></span><br><span class="line">mMovie.draw(cacheCanvas, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// canvas绘制cacheBitmap</span></span><br><span class="line">canvas.drawBitmap(cacheBitmap, <span class="number">0</span>, <span class="number">0</span>, <span class="keyword">new</span> Paint());</span><br></pre></td></tr></table></figure>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ul>
-<li><p>在使用Movie绘制时，即 <strong>mMovie.draw(canvas, 0, 0)</strong> 时Log显示“fatal error”, 在查阅了 <a href="http://stackoverflow.com/questions/29816897/android-fatal-signal-11-sigsegv-at-0x00000000-code-1-on-movie-draw" title="http://stackoverflow.com/questions/29816897/android-fatal-signal-11-sigsegv-at-0x00000000-code-1-on-movie-draw" target="_blank" rel="external">stack overflow</a> 后得知，必须<strong>关闭硬件加速</strong>才能正常运行… &lt;尚未解决&gt;</p>
-</li>
-<li><p>在 <strong>onDraw(Canvas canvas)</strong> 方法中调用 <strong>canvas.setMatrix(matrix)</strong> 导致图像显示异常，之后更换代码为 <strong>canvas.concatMatrix(matrix)</strong> 问题解决~ <br><br>猜测: 父级容器将设定好内置Matrix的canvas传递给各个子组件让其绘制自己，而问题代码覆盖了内置Matrix Orz~</p>
-</li>
-</ul>
-<h2 id="后续版本"><a href="#后续版本" class="headerlink" title="后续版本"></a>后续版本</h2><ul>
-<li>尝试兼容一般图片 【已尝试过使用 Movie类 解析静态图片的数据流，返回为null</li>
-<li>在onMeasure()方法中，让View支持 <strong>wrap_content</strong> 属性</li>
-<li>在onDraw()方法中，处理 <strong>padding</strong> 属性</li>
-</ul>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过一次解决办法，很多博客上</p>
 
       
     </div>
@@ -399,7 +338,7 @@
           
             <a href="/tags/Android/" rel="tag">#Android</a>
           
-            <a href="/tags/组件/" rel="tag">#组件</a>
+            <a href="/tags/图标/" rel="tag">#图标</a>
           
         </div>
       
@@ -408,17 +347,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/17/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/03/17/Android 自定义View—动态图播放/" rel="next" title="Android 自定义View—动态图播放">
+                <i class="fa fa-chevron-left"></i> Android 自定义View—动态图播放
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/22/Android 图标角标数字显示—未读通知/" rel="prev" title="Android 图标角标数字显示—未读通知">
-                Android 图标角标数字显示—未读通知 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -433,10 +368,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/17/Android 自定义View—动态图播放/"
-     data-title="Android 自定义View—动态图播放"
+        <div class="ds-share flat" data-thread-key="2016/03/22/Android 图标角标数字显示—未读通知/"
+     data-title="Android 图标角标数字显示—未读通知"
      data-content=""
-     data-url="http://yoursite.com/2016/03/17/Android 自定义View—动态图播放/">
+     data-url="http://yoursite.com/2016/03/22/Android 图标角标数字显示—未读通知/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -463,8 +398,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/17/Android 自定义View—动态图播放/"
-           data-title="Android 自定义View—动态图播放" data-url="http://yoursite.com/2016/03/17/Android 自定义View—动态图播放/">
+      <div class="ds-thread" data-thread-key="2016/03/22/Android 图标角标数字显示—未读通知/"
+           data-title="Android 图标角标数字显示—未读通知" data-url="http://yoursite.com/2016/03/22/Android 图标角标数字显示—未读通知/">
       </div>
     
   </div>
@@ -585,7 +520,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础实现"><span class="nav-number">2.</span> <span class="nav-text">基础实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进阶实现"><span class="nav-number">3.</span> <span class="nav-text">进阶实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#增加-ScaleType-属性"><span class="nav-number">3.1.</span> <span class="nav-text">增加 ScaleType 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Matrix变换"><span class="nav-number">3.2.</span> <span class="nav-text">使用Matrix变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-暂停播放"><span class="nav-number">3.3.</span> <span class="nav-text">实现 暂停播放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas-二级缓存"><span class="nav-number">3.4.</span> <span class="nav-text">Canvas 二级缓存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.1.</span> <span class="nav-text">遇到的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续版本"><span class="nav-number">4.2.</span> <span class="nav-text">后续版本</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
