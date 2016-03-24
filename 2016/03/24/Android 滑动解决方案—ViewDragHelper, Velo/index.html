@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,图标," />
+  <meta name="keywords" content="Android 组件," />
 
 
 
@@ -59,16 +59,19 @@
 
 
 
-<meta name="description" content="简介很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过解决办法，很多博客上提到使用 桌面小插件 来实现，我也尝试过用自定义图片实现的 快捷方式，但这些方法都有各自的局限性，或者说和真实情况效果不符！ ① 因为在手机桌面测试微信图标的拖动删除时，会提示卸载微信APP; 而这种效果不论是桌面小插件 或是 快捷方式 都很难实现。">
+<meta name="description" content="简介这两天在深入研究 拖了很久的、一直困扰我的 滑动问题，之前略做过一些复杂的滑动冲突处理，但是有些滑动实现起来依然困难重重，比如这次的Demo中的第一个目标是实现 课程格子 中课程列表的多向滑动，利用双层嵌套ScrollView的做法在处理 滑动冲突 时较为复杂，而使用 ViewDragHelper 使我在数分钟之内就实现了比嵌套更好的效果~ 
+献上我的膝盖 - Github： https://">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 图标角标数字显示—未读通知">
-<meta property="og:url" content="http://yoursite.com/2016/03/22/Android 图标角标数字显示—未读通知/index.html">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="http://yoursite.com/2016/03/24/Android 滑动解决方案—ViewDragHelper, Velo/index.html">
 <meta property="og:site_name" content="Pantsu's Blog">
-<meta property="og:description" content="简介很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过解决办法，很多博客上提到使用 桌面小插件 来实现，我也尝试过用自定义图片实现的 快捷方式，但这些方法都有各自的局限性，或者说和真实情况效果不符！ ① 因为在手机桌面测试微信图标的拖动删除时，会提示卸载微信APP; 而这种效果不论是桌面小插件 或是 快捷方式 都很难实现。">
-<meta property="og:updated_time" content="2016-03-22T08:23:25.519Z">
+<meta property="og:description" content="简介这两天在深入研究 拖了很久的、一直困扰我的 滑动问题，之前略做过一些复杂的滑动冲突处理，但是有些滑动实现起来依然困难重重，比如这次的Demo中的第一个目标是实现 课程格子 中课程列表的多向滑动，利用双层嵌套ScrollView的做法在处理 滑动冲突 时较为复杂，而使用 ViewDragHelper 使我在数分钟之内就实现了比嵌套更好的效果~ 
+献上我的膝盖 - Github： https://">
+<meta property="og:updated_time" content="2016-03-24T04:28:07.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 图标角标数字显示—未读通知">
-<meta name="twitter:description" content="简介很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过解决办法，很多博客上提到使用 桌面小插件 来实现，我也尝试过用自定义图片实现的 快捷方式，但这些方法都有各自的局限性，或者说和真实情况效果不符！ ① 因为在手机桌面测试微信图标的拖动删除时，会提示卸载微信APP; 而这种效果不论是桌面小插件 或是 快捷方式 都很难实现。">
+<meta name="twitter:title" content="Hello World">
+<meta name="twitter:description" content="简介这两天在深入研究 拖了很久的、一直困扰我的 滑动问题，之前略做过一些复杂的滑动冲突处理，但是有些滑动实现起来依然困难重重，比如这次的Demo中的第一个目标是实现 课程格子 中课程列表的多向滑动，利用双层嵌套ScrollView的做法在处理 滑动冲突 时较为复杂，而使用 ViewDragHelper 使我在数分钟之内就实现了比嵌套更好的效果~ 
+献上我的膝盖 - Github： https://">
 
 
 
@@ -86,7 +89,7 @@
   };
 </script>
 
-  <title> Android 图标角标数字显示—未读通知 | Pantsu's Blog </title>
+  <title> Hello World | Pantsu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +259,7 @@
             
             
               
-                Android 图标角标数字显示—未读通知
+                Hello World
               
             
           </h1>
@@ -268,8 +271,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-22T13:53:22+08:00" content="2016-03-22">
-              2016-03-22
+            <time itemprop="dateCreated" datetime="2016-03-24T11:45:22+08:00" content="2016-03-24">
+              2016-03-24
             </time>
           </span>
 
@@ -298,8 +301,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/22/Android 图标角标数字显示—未读通知/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/22/Android 图标角标数字显示—未读通知/" itemprop="commentsCount"></span>
+                <a href="/2016/03/24/Android 滑动解决方案—ViewDragHelper, Velo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/24/Android 滑动解决方案—ViewDragHelper, Velo/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -321,14 +324,15 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过解决办法，很多博客上提到使用 <strong>桌面小插件</strong> 来实现，我也尝试过用自定义图片实现的 <strong>快捷方式</strong>，但这些方法都有各自的局限性，或者说和真实情况效果不符！ <strong>① 因为在手机桌面测试微信图标的拖动删除时，会提示卸载微信APP;</strong> 而这种效果不论是<strong>桌面小插件</strong> 或是 <strong>快捷方式</strong> 都很难实现。</p>
-<a id="more"></a>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这两天在深入研究 拖了很久的、一直困扰我的 <strong>滑动问题</strong>，之前略做过一些复杂的滑动冲突处理，但是有些滑动实现起来依然困难重重，比如这次的Demo中的第一个目标是实现 <strong>课程格子</strong> 中课程列表的多向滑动，利用双层嵌套ScrollView的做法在处理 <strong>滑动冲突</strong> 时较为复杂，而使用 <strong>ViewDragHelper</strong> 使我在数分钟之内就实现了比嵌套更好的效果~ </p>
 <p><strong>献上我的膝盖 - Github</strong>： <a href="https://github.com/Pantsu-It/ProjectForLearn" title="https://github.com/Pantsu-It/ProjectForLearn" target="_blank" rel="external">https://github.com/Pantsu-It/ProjectForLearn</a></p>
-<h1 id="尝试"><a href="#尝试" class="headerlink" title="尝试"></a>尝试</h1><h2 id="重写-Launcher"><a href="#重写-Launcher" class="headerlink" title="重写 Launcher"></a>重写 Launcher</h2><p>网上提到这种办法是让开发者写一个第三方的 <strong>Launcher</strong>，（所谓Launcher就是负责绘制桌面APP图标的系统程序，他将检测到所有的设置为<em><category android:name="android.intent.category.LAUNCHER"></category></em>的Activity），然而对于第三方APP开发者，这种方法不可行。</p>
-<h2 id="使用-Activity-Alias"><a href="#使用-Activity-Alias" class="headerlink" title="使用 Activity-Alias"></a>使用 Activity-Alias</h2><p>我尝试的第三种方式是通过在代码中动态 启用/禁用 <strong>Activity-Alias</strong>，这次实现了<strong>效果①</strong>，但缺点是一个<strong>Activity-Alias</strong>在Manifest.xml中静态绑定一个drawable图片，如果要显示1-100条未读通知的范围，就必须创建 <strong>100个Activity-Alias</strong>，而且更换速度很慢，不能“即时”更新角标数字。</p>
-<h2 id="使用-第三方ROM定义的广播"><a href="#使用-第三方ROM定义的广播" class="headerlink" title="使用 第三方ROM定义的广播"></a>使用 第三方ROM定义的广播</h2><p>幸运的是，我在网上找到了一篇文章 <a href="">Badge分析&amp;如何逼死处女座</a>，文章中提到了有些厂家（包括三星，LG，小米）的第三方ROM支持通过发送广播来设置 Badge，实现原生ROM支持的未读短信数的效果。  以 <strong>MIUI系统</strong> 为例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 向小米手机发送未读消息数广播</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@param</span> count</span><br><span class="line"> */</span></span><br><span class="line"><span class="meta">@TargetApi</span>(Build.VERSION_CODES.JELLY_BEAN)</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendToXiaoMi</span><span class="params">(Context context, <span class="keyword">int</span> id, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 设置MIUI的Badge</span><br><span class="line">     *</span><br><span class="line">     * <span class="doctag">@param</span> context context</span><br><span class="line">     * <span class="doctag">@param</span> count count</span><br><span class="line">     */</span></span><br><span class="line">    Log.d(<span class="string">"xys"</span>, <span class="string">"Launcher : MIUI"</span>);</span><br><span class="line">    Intent intent = <span class="keyword">new</span> Intent(context, MainActivity.class);</span><br><span class="line">    PendingIntent contentIntent = PendingIntent.getActivity(context, <span class="number">0</span>, intent, PendingIntent.FLAG_UPDATE_CURRENT);</span><br><span class="line"></span><br><span class="line">    NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);</span><br><span class="line">    Notification.Builder builder =</span><br><span class="line">            <span class="keyword">new</span> Notification.Builder(context)</span><br><span class="line">                    .setContentTitle(<span class="string">"title"</span>)</span><br><span class="line">                    .setContentText(<span class="string">"text"</span>)</span><br><span class="line">                    .setSmallIcon(R.mipmap.ic_launcher)</span><br><span class="line">                    .setContentIntent(contentIntent)</span><br><span class="line">                    .setAutoCancel(<span class="keyword">true</span>);</span><br><span class="line">    Notification notification = builder.build();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Field field = notification.getClass().getDeclaredField(<span class="string">"extraNotification"</span>);</span><br><span class="line">        Object extraNotification = field.get(notification);</span><br><span class="line">        Method method = extraNotification.getClass().getDeclaredMethod(<span class="string">"setMessageCount"</span>, <span class="keyword">int</span>.class);</span><br><span class="line">        method.invoke(extraNotification, count);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    mNotificationManager.notify(id, notification);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 取消向小米手机发送未读消息数广播</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">cancelOfXiaoMi</span><span class="params">(Context context, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">    NotificationManager manger = (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);</span><br><span class="line">    manger.cancel(id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="滑动分析"><a href="#滑动分析" class="headerlink" title="滑动分析"></a>滑动分析</h1><ul>
+<li><strong>课程格子：</strong>课程列表的多向滑动 + 隐藏上栏的滑动收缩  （已实现）</li>
+<li><strong>小米时钟：</strong>全局滑动相应 + 下部列表的滑动收缩 （待实现）</li>
+<li><strong>QQ主界面：</strong>左侧类似DrawerLayout的滑出 + 聊天列表Item-左滑显示操作按钮 （待实现）</li>
+<li><strong>知乎主界面：</strong>推送列表Item-左滑删除 + [原]子界面右滑回退 （待实现）</li>
+</ul>
+<h1 id="滑动实例"><a href="#滑动实例" class="headerlink" title="滑动实例"></a>滑动实例</h1>
       
     </div>
 
@@ -342,9 +346,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
-          
-            <a href="/tags/图标/" rel="tag">#图标</a>
+            <a href="/tags/Android-组件/" rel="tag">#Android 组件</a>
           
         </div>
       
@@ -353,17 +355,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/17/Android 自定义View—动态图播放/" rel="next" title="Android 自定义View—动态图播放">
-                <i class="fa fa-chevron-left"></i> Android 自定义View—动态图播放
+              <a href="/2016/03/22/Android 图标角标数字显示—未读通知/" rel="next" title="Android 图标角标数字显示—未读通知">
+                <i class="fa fa-chevron-left"></i> Android 图标角标数字显示—未读通知
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/24/Android 滑动解决方案—ViewDragHelper, Velo/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -378,10 +376,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/22/Android 图标角标数字显示—未读通知/"
-     data-title="Android 图标角标数字显示—未读通知"
+        <div class="ds-share flat" data-thread-key="2016/03/24/Android 滑动解决方案—ViewDragHelper, Velo/"
+     data-title="Hello World"
      data-content=""
-     data-url="http://yoursite.com/2016/03/22/Android 图标角标数字显示—未读通知/">
+     data-url="http://yoursite.com/2016/03/24/Android 滑动解决方案—ViewDragHelper, Velo/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -408,8 +406,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/22/Android 图标角标数字显示—未读通知/"
-           data-title="Android 图标角标数字显示—未读通知" data-url="http://yoursite.com/2016/03/22/Android 图标角标数字显示—未读通知/">
+      <div class="ds-thread" data-thread-key="2016/03/24/Android 滑动解决方案—ViewDragHelper, Velo/"
+           data-title="Hello World" data-url="http://yoursite.com/2016/03/24/Android 滑动解决方案—ViewDragHelper, Velo/">
       </div>
     
   </div>
@@ -530,7 +528,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#尝试"><span class="nav-number">2.</span> <span class="nav-text">尝试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重写-Launcher"><span class="nav-number">2.1.</span> <span class="nav-text">重写 Launcher</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Activity-Alias"><span class="nav-number">2.2.</span> <span class="nav-text">使用 Activity-Alias</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-第三方ROM定义的广播"><span class="nav-number">2.3.</span> <span class="nav-text">使用 第三方ROM定义的广播</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#滑动分析"><span class="nav-number">2.</span> <span class="nav-text">滑动分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#滑动实例"><span class="nav-number">3.</span> <span class="nav-text">滑动实例</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
