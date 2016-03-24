@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-24T04:29:23.684Z</updated>
+  <updated>2016-03-24T04:31:27.832Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/03/24/Android%20%E6%BB%91%E5%8A%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E2%80%94ViewDragHelper,%20Velo/"/>
     <id>http://yoursite.com/2016/03/24/Android 滑动解决方案—ViewDragHelper, Velo/</id>
     <published>2016-03-24T03:45:22.000Z</published>
-    <updated>2016-03-24T04:29:23.684Z</updated>
+    <updated>2016-03-24T04:31:27.832Z</updated>
     
     <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;这两天在深入研究 拖了很久的、一直困扰我的 &lt;strong&gt;滑动问题&lt;/strong&gt;，之前略做过一些复杂的滑动冲突处理，但是有些滑动实现起来依然困难重重，比如这次的Demo中的第一个目标是实现 &lt;strong&gt;课程格子&lt;/strong&gt; 中课程列表的多向滑动，利用双层嵌套ScrollView的做法在处理 &lt;strong&gt;滑动冲突&lt;/strong&gt; 时较为复杂，而使用 &lt;strong&gt;ViewDragHelper&lt;/strong&gt; 使我在数分钟之内就实现了比嵌套更好的效果~ &lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -42,7 +42,9 @@
       <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
     
-      <category term="Android 组件" scheme="http://yoursite.com/tags/Android-%E7%BB%84%E4%BB%B6/"/>
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="滑动" scheme="http://yoursite.com/tags/%E6%BB%91%E5%8A%A8/"/>
     
   </entry>
   
