@@ -41,12 +41,10 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,图标," />
+  <meta name="keywords" content="算法,Java," />
 
 
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="Pantsu's Blog" type="application/atom+xml" />
@@ -61,16 +59,25 @@
 
 
 
-<meta name="description" content="简介很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过解决办法，很多博客上提到使用 桌面小插件 来实现，我也尝试过用自定义图片实现的 快捷方式，但这些方法都有各自的局限性，或者说和真实情况效果不符！ ① 因为在手机桌面测试微信图标的拖动删除时，会提示卸载微信APP; 而这种效果不论是桌面小插件 或是 快捷方式 都很难实现。">
+<meta name="description" content="简介根据一位舍友在之前去阿里面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。
+
+[Java] StringBuilder 和 StringBuffer 的区别 
+[算法] 快速排序如何优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 图标角标数字显示—未读通知">
-<meta property="og:url" content="http://yoursite.com/2016/03/22/Android 图标角标数字显示—未读通知/index.html">
+<meta property="og:title" content="面试问题总结（一）">
+<meta property="og:url" content="http://yoursite.com/2016/03/27/面试问题总结（一）/index.html">
 <meta property="og:site_name" content="Pantsu's Blog">
-<meta property="og:description" content="简介很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过解决办法，很多博客上提到使用 桌面小插件 来实现，我也尝试过用自定义图片实现的 快捷方式，但这些方法都有各自的局限性，或者说和真实情况效果不符！ ① 因为在手机桌面测试微信图标的拖动删除时，会提示卸载微信APP; 而这种效果不论是桌面小插件 或是 快捷方式 都很难实现。">
-<meta property="og:updated_time" content="2016-03-22T08:23:25.519Z">
+<meta property="og:description" content="简介根据一位舍友在之前去阿里面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。
+
+[Java] StringBuilder 和 StringBuffer 的区别 
+[算法] 快速排序如何优化">
+<meta property="og:updated_time" content="2016-03-28T16:01:13.223Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 图标角标数字显示—未读通知">
-<meta name="twitter:description" content="简介很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过解决办法，很多博客上提到使用 桌面小插件 来实现，我也尝试过用自定义图片实现的 快捷方式，但这些方法都有各自的局限性，或者说和真实情况效果不符！ ① 因为在手机桌面测试微信图标的拖动删除时，会提示卸载微信APP; 而这种效果不论是桌面小插件 或是 快捷方式 都很难实现。">
+<meta name="twitter:title" content="面试问题总结（一）">
+<meta name="twitter:description" content="简介根据一位舍友在之前去阿里面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。
+
+[Java] StringBuilder 和 StringBuffer 的区别 
+[算法] 快速排序如何优化">
 
 
 
@@ -88,7 +95,7 @@
   };
 </script>
 
-  <title> Android 图标角标数字显示—未读通知 | Pantsu's Blog </title>
+  <title> 面试问题总结（一） | Pantsu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +265,7 @@
             
             
               
-                Android 图标角标数字显示—未读通知
+                面试问题总结（一）
               
             
           </h1>
@@ -270,8 +277,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-22T13:53:22+08:00" content="2016-03-22">
-              2016-03-22
+            <time itemprop="dateCreated" datetime="2016-03-27T12:11:24+08:00" content="2016-03-27">
+              2016-03-27
             </time>
           </span>
 
@@ -284,8 +291,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -300,8 +307,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/22/Android 图标角标数字显示—未读通知/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/22/Android 图标角标数字显示—未读通知/" itemprop="commentsCount"></span>
+                <a href="/2016/03/27/面试问题总结（一）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/27/面试问题总结（一）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -323,14 +330,31 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>很久以前就注意到像QQ、微信、短信、电话等一些应用会在桌面的右上角显示未读消息等等，曾经寻找过解决办法，很多博客上提到使用 <strong>桌面小插件</strong> 来实现，我也尝试过用自定义图片实现的 <strong>快捷方式</strong>，但这些方法都有各自的局限性，或者说和真实情况效果不符！ <strong>① 因为在手机桌面测试微信图标的拖动删除时，会提示卸载微信APP;</strong> 而这种效果不论是<strong>桌面小插件</strong> 或是 <strong>快捷方式</strong> 都很难实现。</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>根据一位舍友在之前去<strong>阿里</strong>面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。</p>
+<ul>
+<li>[Java] StringBuilder 和 StringBuffer 的区别 </li>
+<li>[算法] 快速排序如何优化</li>
+</ul>
 <a id="more"></a>
-<p><strong>献上我的膝盖 - Github</strong>： <a href="https://github.com/Pantsu-It/ProjectForLearn" title="https://github.com/Pantsu-It/ProjectForLearn" target="_blank" rel="external">https://github.com/Pantsu-It/ProjectForLearn</a></p>
-<h1 id="尝试"><a href="#尝试" class="headerlink" title="尝试"></a>尝试</h1><h2 id="重写-Launcher"><a href="#重写-Launcher" class="headerlink" title="重写 Launcher"></a>重写 Launcher</h2><p>网上提到这种办法是让开发者写一个第三方的 <strong>Launcher</strong>，（所谓Launcher就是负责绘制桌面APP图标的系统程序，他将检测到所有的设置为<em><category android:name="android.intent.category.LAUNCHER"></category></em>的Activity），然而对于第三方APP开发者，这种方法不可行。</p>
-<h2 id="使用-Activity-Alias"><a href="#使用-Activity-Alias" class="headerlink" title="使用 Activity-Alias"></a>使用 Activity-Alias</h2><p>我尝试的第三种方式是通过在代码中动态 启用/禁用 <strong>Activity-Alias</strong>，这次实现了<strong>效果①</strong>，但缺点是一个<strong>Activity-Alias</strong>在Manifest.xml中静态绑定一个drawable图片，如果要显示1-100条未读通知的范围，就必须创建 <strong>100个Activity-Alias</strong>，而且更换速度很慢，不能“即时”更新角标数字。</p>
-<h2 id="使用-第三方ROM定义的广播"><a href="#使用-第三方ROM定义的广播" class="headerlink" title="使用 第三方ROM定义的广播"></a>使用 第三方ROM定义的广播</h2><p>幸运的是，我在网上找到了一篇文章 <a href="">Badge分析&amp;如何逼死处女座</a>，文章中提到了有些厂家（包括三星，LG，小米）的第三方ROM支持通过发送广播来设置 Badge，实现原生ROM支持的未读短信数的效果。  以 <strong>MIUI系统</strong> 为例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 向小米手机发送未读消息数广播</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@param</span> count</span><br><span class="line"> */</span></span><br><span class="line"><span class="meta">@TargetApi</span>(Build.VERSION_CODES.JELLY_BEAN)</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendToXiaoMi</span><span class="params">(Context context, <span class="keyword">int</span> id, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 设置MIUI的Badge</span><br><span class="line">     *</span><br><span class="line">     * <span class="doctag">@param</span> context context</span><br><span class="line">     * <span class="doctag">@param</span> count count</span><br><span class="line">     */</span></span><br><span class="line">    Log.d(<span class="string">"xys"</span>, <span class="string">"Launcher : MIUI"</span>);</span><br><span class="line">    Intent intent = <span class="keyword">new</span> Intent(context, MainActivity.class);</span><br><span class="line">    PendingIntent contentIntent = PendingIntent.getActivity(context, <span class="number">0</span>, intent, PendingIntent.FLAG_UPDATE_CURRENT);</span><br><span class="line"></span><br><span class="line">    NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);</span><br><span class="line">    Notification.Builder builder =</span><br><span class="line">            <span class="keyword">new</span> Notification.Builder(context)</span><br><span class="line">                    .setContentTitle(<span class="string">"title"</span>)</span><br><span class="line">                    .setContentText(<span class="string">"text"</span>)</span><br><span class="line">                    .setSmallIcon(R.mipmap.ic_launcher)</span><br><span class="line">                    .setContentIntent(contentIntent)</span><br><span class="line">                    .setAutoCancel(<span class="keyword">true</span>);</span><br><span class="line">    Notification notification = builder.build();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Field field = notification.getClass().getDeclaredField(<span class="string">"extraNotification"</span>);</span><br><span class="line">        Object extraNotification = field.get(notification);</span><br><span class="line">        Method method = extraNotification.getClass().getDeclaredMethod(<span class="string">"setMessageCount"</span>, <span class="keyword">int</span>.class);</span><br><span class="line">        method.invoke(extraNotification, count);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    mNotificationManager.notify(id, notification);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 取消向小米手机发送未读消息数广播</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">cancelOfXiaoMi</span><span class="params">(Context context, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">    NotificationManager manger = (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);</span><br><span class="line">    manger.cancel(id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="快速排序如何优化"><a href="#快速排序如何优化" class="headerlink" title="快速排序如何优化"></a>快速排序如何优化</h1><p>这个问题突然一听感觉无从下手，（啊嘞？快排不是最快的基于比较的排序算法吗！）这里注意： 快排只是平均速度最快，达到O(nlogn)，而最坏情况下（已经排序好的输入下）达到O(n²)，接近于冒泡排序！ 因此，改进对最快情况的处理就可以优化快速排序啦~</p>
+<p>主要参考了<a href="http://www.blogjava.net/killme2008/archive/2010/09/08/quicksort_optimized.html" target="_blank" rel="external">快速排序及优化</a>，这篇文章分析的很全面~</p>
+<h4 id="P1版本：基础"><a href="#P1版本：基础" class="headerlink" title="P1版本：基础"></a>P1版本：基础</h4><blockquote>
+<p>选择左端点（或右断点）为pivot, 遍历数组元素与pivot进行比较并将较小交换至左边，最后将左端点（或右断点）交换到中间位置。</p>
+</blockquote>
+<h4 id="P2版本：优化排序好数组的情况"><a href="#P2版本：优化排序好数组的情况" class="headerlink" title="P2版本：优化排序好数组的情况"></a>P2版本：优化排序好数组的情况</h4><blockquote>
+<p>随机选取pivot，即随机交换左端点与数组中一点</p>
+</blockquote>
+<h4 id="P3版本：更高效的划分方法"><a href="#P3版本：更高效的划分方法" class="headerlink" title="P3版本：更高效的划分方法"></a>P3版本：更高效的划分方法</h4><blockquote>
+<p>使用两个索引i,j，即从左边寻找大于pivot的元素，从右边寻找pivot的元素，交换这两个元素</p>
+</blockquote>
+<h4 id="P4-P5版本：在排序好数组情况下，快排为O-n²-，插入排序为O-n"><a href="#P4-P5版本：在排序好数组情况下，快排为O-n²-，插入排序为O-n" class="headerlink" title="P4/P5版本：在排序好数组情况下，快排为O(n²)，插入排序为O(n)"></a>P4/P5版本：在排序好数组情况下，快排为O(n²)，插入排序为O(n)</h4><blockquote>
+<p>如果序列规模足够小，使用插入排序替代快速排序</p>
+<p>或者序列规模足够小时直接返回，（这个时候整个数组是由一个一个没有排序的子序列按照顺序组成的），然后进行一遍插入排序</p>
+</blockquote>
+<h4 id="P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）"><a href="#P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）" class="headerlink" title="P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）"></a>P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）</h4><blockquote>
+<p>大小大于40的数组使用median-of-nine选择pivot，大小在7到40之间的数组使用median-of-three选择中数，大小等于7的数组直接选择中数，大小小于7的数组则直接使用插入排序</p>
+</blockquote>
+<h4 id="P6增强版：将P3版本中的”fat-partition”增强为”split-end”"><a href="#P6增强版：将P3版本中的”fat-partition”增强为”split-end”" class="headerlink" title="P6增强版：将P3版本中的”fat partition”增强为”split-end”"></a>P6增强版：将P3版本中的”fat partition”增强为”split-end”</h4>
       
     </div>
 
@@ -344,9 +368,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
-            <a href="/tags/图标/" rel="tag">#图标</a>
+            <a href="/tags/Java/" rel="tag">#Java</a>
           
         </div>
       
@@ -355,17 +379,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/17/Android 自定义View—动态图播放/" rel="next" title="Android 自定义View—动态图播放">
-                <i class="fa fa-chevron-left"></i> Android 自定义View—动态图播放
+              <a href="/2016/03/24/Android 滑动解决方案—ViewDragHelper, VelocityTracker, Scroller/" rel="next" title="Android 滑动解决方案—ViewDragHelper, VelocityTracker, Scroller">
+                <i class="fa fa-chevron-left"></i> Android 滑动解决方案—ViewDragHelper, VelocityTracker, Scroller
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/24/Android 滑动解决方案—ViewDragHelper, VelocityTracker, Scroller/" rel="prev" title="Android 滑动解决方案—ViewDragHelper, VelocityTracker, Scroller">
-                Android 滑动解决方案—ViewDragHelper, VelocityTracker, Scroller <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -380,10 +400,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/22/Android 图标角标数字显示—未读通知/"
-     data-title="Android 图标角标数字显示—未读通知"
+        <div class="ds-share flat" data-thread-key="2016/03/27/面试问题总结（一）/"
+     data-title="面试问题总结（一）"
      data-content=""
-     data-url="http://yoursite.com/2016/03/22/Android 图标角标数字显示—未读通知/">
+     data-url="http://yoursite.com/2016/03/27/面试问题总结（一）/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -410,8 +430,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/22/Android 图标角标数字显示—未读通知/"
-           data-title="Android 图标角标数字显示—未读通知" data-url="http://yoursite.com/2016/03/22/Android 图标角标数字显示—未读通知/">
+      <div class="ds-thread" data-thread-key="2016/03/27/面试问题总结（一）/"
+           data-title="面试问题总结（一）" data-url="http://yoursite.com/2016/03/27/面试问题总结（一）/">
       </div>
     
   </div>
@@ -532,7 +552,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#尝试"><span class="nav-number">2.</span> <span class="nav-text">尝试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重写-Launcher"><span class="nav-number">2.1.</span> <span class="nav-text">重写 Launcher</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Activity-Alias"><span class="nav-number">2.2.</span> <span class="nav-text">使用 Activity-Alias</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-第三方ROM定义的广播"><span class="nav-number">2.3.</span> <span class="nav-text">使用 第三方ROM定义的广播</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序如何优化"><span class="nav-number">2.</span> <span class="nav-text">快速排序如何优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#P1版本：基础"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">P1版本：基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P2版本：优化排序好数组的情况"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">P2版本：优化排序好数组的情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P3版本：更高效的划分方法"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">P3版本：更高效的划分方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P4-P5版本：在排序好数组情况下，快排为O-n²-，插入排序为O-n"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">P4/P5版本：在排序好数组情况下，快排为O(n²)，插入排序为O(n)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P6增强版：将P3版本中的”fat-partition”增强为”split-end”"><span class="nav-number">2.0.0.6.</span> <span class="nav-text">P6增强版：将P3版本中的”fat partition”增强为”split-end”</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
