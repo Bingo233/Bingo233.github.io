@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-28T16:01:13.223Z</updated>
+  <updated>2016-03-28T16:03:52.804Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/03/27/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>http://yoursite.com/2016/03/27/面试问题总结（一）/</id>
     <published>2016-03-27T04:11:24.000Z</published>
-    <updated>2016-03-28T16:01:13.223Z</updated>
+    <updated>2016-03-28T16:03:52.804Z</updated>
     
     <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;根据一位舍友在之前去&lt;strong&gt;阿里&lt;/strong&gt;面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。&lt;/p&gt;
 &lt;ul&gt;
@@ -30,23 +30,23 @@
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;快速排序如何优化&quot;&gt;&lt;a href=&quot;#快速排序如何优化&quot; class=&quot;headerlink&quot; title=&quot;快速排序如何优化&quot;&gt;&lt;/a&gt;快速排序如何优化&lt;/h1&gt;&lt;p&gt;这个问题突然一听感觉无从下手，（啊嘞？快排不是最快的基于比较的排序算法吗！）这里注意： 快排只是平均速度最快，达到O(nlogn)，而最坏情况下（已经排序好的输入下）达到O(n²)，接近于冒泡排序！ 因此，改进对最快情况的处理就可以优化快速排序啦~&lt;/p&gt;
 &lt;p&gt;主要参考了&lt;a href=&quot;http://www.blogjava.net/killme2008/archive/2010/09/08/quicksort_optimized.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;快速排序及优化&lt;/a&gt;，这篇文章分析的很全面~&lt;/p&gt;
-&lt;h4 id=&quot;P1版本：基础&quot;&gt;&lt;a href=&quot;#P1版本：基础&quot; class=&quot;headerlink&quot; title=&quot;P1版本：基础&quot;&gt;&lt;/a&gt;P1版本：基础&lt;/h4&gt;&lt;blockquote&gt;
+&lt;h2 id=&quot;P1版本：基础&quot;&gt;&lt;a href=&quot;#P1版本：基础&quot; class=&quot;headerlink&quot; title=&quot;P1版本：基础&quot;&gt;&lt;/a&gt;P1版本：基础&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;选择左端点（或右断点）为pivot, 遍历数组元素与pivot进行比较并将较小交换至左边，最后将左端点（或右断点）交换到中间位置。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&quot;P2版本：优化排序好数组的情况&quot;&gt;&lt;a href=&quot;#P2版本：优化排序好数组的情况&quot; class=&quot;headerlink&quot; title=&quot;P2版本：优化排序好数组的情况&quot;&gt;&lt;/a&gt;P2版本：优化排序好数组的情况&lt;/h4&gt;&lt;blockquote&gt;
+&lt;h2 id=&quot;P2版本：优化排序好数组的情况&quot;&gt;&lt;a href=&quot;#P2版本：优化排序好数组的情况&quot; class=&quot;headerlink&quot; title=&quot;P2版本：优化排序好数组的情况&quot;&gt;&lt;/a&gt;P2版本：优化排序好数组的情况&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;随机选取pivot，即随机交换左端点与数组中一点&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&quot;P3版本：更高效的划分方法&quot;&gt;&lt;a href=&quot;#P3版本：更高效的划分方法&quot; class=&quot;headerlink&quot; title=&quot;P3版本：更高效的划分方法&quot;&gt;&lt;/a&gt;P3版本：更高效的划分方法&lt;/h4&gt;&lt;blockquote&gt;
+&lt;h2 id=&quot;P3版本：更高效的划分方法&quot;&gt;&lt;a href=&quot;#P3版本：更高效的划分方法&quot; class=&quot;headerlink&quot; title=&quot;P3版本：更高效的划分方法&quot;&gt;&lt;/a&gt;P3版本：更高效的划分方法&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;使用两个索引i,j，即从左边寻找大于pivot的元素，从右边寻找pivot的元素，交换这两个元素&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&quot;P4-P5版本：在排序好数组情况下，快排为O-n²-，插入排序为O-n&quot;&gt;&lt;a href=&quot;#P4-P5版本：在排序好数组情况下，快排为O-n²-，插入排序为O-n&quot; class=&quot;headerlink&quot; title=&quot;P4/P5版本：在排序好数组情况下，快排为O(n²)，插入排序为O(n)&quot;&gt;&lt;/a&gt;P4/P5版本：在排序好数组情况下，快排为O(n²)，插入排序为O(n)&lt;/h4&gt;&lt;blockquote&gt;
+&lt;h2 id=&quot;P4-P5版本：在排序好数组情况下，快排为O-n²-，插入排序为O-n&quot;&gt;&lt;a href=&quot;#P4-P5版本：在排序好数组情况下，快排为O-n²-，插入排序为O-n&quot; class=&quot;headerlink&quot; title=&quot;P4/P5版本：在排序好数组情况下，快排为O(n²)，插入排序为O(n)&quot;&gt;&lt;/a&gt;P4/P5版本：在排序好数组情况下，快排为O(n²)，插入排序为O(n)&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;如果序列规模足够小，使用插入排序替代快速排序&lt;/p&gt;
 &lt;p&gt;或者序列规模足够小时直接返回，（这个时候整个数组是由一个一个没有排序的子序列按照顺序组成的），然后进行一遍插入排序&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&quot;P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&quot;&gt;&lt;a href=&quot;#P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&quot; class=&quot;headerlink&quot; title=&quot;P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&quot;&gt;&lt;/a&gt;P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&lt;/h4&gt;&lt;blockquote&gt;
+&lt;h2 id=&quot;P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&quot;&gt;&lt;a href=&quot;#P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&quot; class=&quot;headerlink&quot; title=&quot;P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&quot;&gt;&lt;/a&gt;P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;大小大于40的数组使用median-of-nine选择pivot，大小在7到40之间的数组使用median-of-three选择中数，大小等于7的数组直接选择中数，大小小于7的数组则直接使用插入排序&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&quot;P6增强版：将P3版本中的”fat-partition”增强为”split-end”&quot;&gt;&lt;a href=&quot;#P6增强版：将P3版本中的”fat-partition”增强为”split-end”&quot; class=&quot;headerlink&quot; title=&quot;P6增强版：将P3版本中的”fat partition”增强为”split-end”&quot;&gt;&lt;/a&gt;P6增强版：将P3版本中的”fat partition”增强为”split-end”&lt;/h4&gt;</content>
+&lt;h2 id=&quot;P6增强版：将P3版本中的”fat-partition”增强为”split-end”&quot;&gt;&lt;a href=&quot;#P6增强版：将P3版本中的”fat-partition”增强为”split-end”&quot; class=&quot;headerlink&quot; title=&quot;P6增强版：将P3版本中的”fat partition”增强为”split-end”&quot;&gt;&lt;/a&gt;P6增强版：将P3版本中的”fat partition”增强为”split-end”&lt;/h2&gt;</content>
     
     <summary type="html">
     
