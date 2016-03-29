@@ -71,7 +71,7 @@
 
 [Java] StringBuilder 和 StringBuffer 的区别 
 [算法] 快速排序如何优化">
-<meta property="og:updated_time" content="2016-03-29T04:00:08.593Z">
+<meta property="og:updated_time" content="2016-03-29T04:05:35.340Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试问题总结（一）">
 <meta name="twitter:description" content="简介根据一位舍友在之前去阿里面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。
@@ -372,7 +372,7 @@
 <p><strong>大多数并发 Collection 实现（包括大多数 Queue）与常规的 java.util 约定也不同，因为它们的迭代器提供了弱一致的</strong>，而不是快速失败的遍历。弱一致的迭代器是线程安全的，但是在迭代时没有必要冻结集合，所以它不一定反映自迭代器创建以来的所有更新。 </p>
 </blockquote>
 <h1 id="快速排序如何优化"><a href="#快速排序如何优化" class="headerlink" title="快速排序如何优化"></a>快速排序如何优化</h1><p>这个问题突然一听感觉无从下手，（啊嘞？快排不是最快的基于比较的排序算法吗！）这里注意： 快排只是平均速度最快，达到O(nlogn)，而最坏情况下（已经排序好的输入下）达到O(n²)，接近于冒泡排序！ 因此，改进对最快情况的处理就可以优化快速排序啦~</p>
-<p>主要参考了<a href="http://www.blogjava.net/killme2008/archive/2010/09/08/quicksort_optimized.html" target="_blank" rel="external">快速排序及优化</a>，这篇文章分析的很全面~</p>
+<p>主要参考了<strong><a href="http://www.blogjava.net/killme2008/archive/2010/09/08/quicksort_optimized.html" target="_blank" rel="external">快速排序及优化</a></strong>，这篇文章分析的很全面~</p>
 <h2 id="P1版本：基础"><a href="#P1版本：基础" class="headerlink" title="P1版本：基础"></a>P1版本：基础</h2><blockquote>
 <p>选择左端点（或右断点）为pivot, 遍历数组元素与pivot进行比较并将较小交换至左边，最后将左端点（或右断点）交换到中间位置。</p>
 </blockquote>
