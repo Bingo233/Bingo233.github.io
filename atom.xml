@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-29T05:15:47.103Z</updated>
+  <updated>2016-03-29T05:17:23.090Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/03/27/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>http://yoursite.com/2016/03/27/面试问题总结（一）/</id>
     <published>2016-03-27T04:11:24.000Z</published>
-    <updated>2016-03-29T05:15:47.103Z</updated>
+    <updated>2016-03-29T05:17:23.090Z</updated>
     
     <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;根据一位舍友在之前去&lt;strong&gt;阿里&lt;/strong&gt;面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。&lt;/p&gt;
 &lt;ul&gt;
@@ -87,7 +87,9 @@
 &lt;h2 id=&quot;选择排序&quot;&gt;&lt;a href=&quot;#选择排序&quot; class=&quot;headerlink&quot; title=&quot;选择排序&quot;&gt;&lt;/a&gt;选择排序&lt;/h2&gt;&lt;p&gt;每遍遍历后，同时选出min和max，分别交换到left和right（如果先交换min和left，注意在max==left的情况下，交换后要更新max为min）&lt;/p&gt;
 &lt;h2 id=&quot;插入排序&quot;&gt;&lt;a href=&quot;#插入排序&quot; class=&quot;headerlink&quot; title=&quot;插入排序&quot;&gt;&lt;/a&gt;插入排序&lt;/h2&gt;&lt;h3 id=&quot;查找优化&quot;&gt;&lt;a href=&quot;#查找优化&quot; class=&quot;headerlink&quot; title=&quot;查找优化&quot;&gt;&lt;/a&gt;查找优化&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;在有序区中查找新元素插入位置时，为了减少元素比较次数提高效率，采用&lt;strong&gt;二分查找算法&lt;/strong&gt;进行插入位置的确定&lt;/p&gt;
-&lt;h3 id=&quot;分治优化（希尔排序）&quot;&gt;&lt;a href=&quot;#分治优化（希尔排序）&quot; class=&quot;headerlink&quot; title=&quot;分治优化（希尔排序）&quot;&gt;&lt;/a&gt;分治优化（希尔排序）&lt;/h3&gt;&lt;p&gt;具体如下（实现为升序）：&lt;br&gt;&lt;br&gt;1.先取一个小于n的整数d1作为第一个增量，将所有距离为d1的倍数的记录放在同一个组中，把无序数组分割为若干个子序列。&lt;br&gt;&lt;br&gt;2.在各子序列内进行直接插入排序。&lt;br&gt;&lt;br&gt;3.然后取第二个增量d2&amp;lt;d1，重复步骤1~2，直至所取的增量dt=1(dt&amp;lt;dt-l&amp;lt;…&amp;lt;d2&amp;lt;d1)，即所有记录放在同一组中进行直接插入排序为止。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;分治优化（希尔排序）&quot;&gt;&lt;a href=&quot;#分治优化（希尔排序）&quot; class=&quot;headerlink&quot; title=&quot;分治优化（希尔排序）&quot;&gt;&lt;/a&gt;分治优化（希尔排序）&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;具体如下（实现为升序）：&lt;br&gt;1.先取一个小于n的整数d1作为第一个增量，将所有距离为d1的倍数的记录放在同一个组中，把无序数组分割为若干个子序列。&lt;br&gt;2.在各子序列内进行直接插入排序。&lt;br&gt;3.然后取第二个增量d2&amp;lt;d1，重复步骤1~2，直至所取的增量dt=1(dt&amp;lt;dt-l&amp;lt;…&amp;lt;d2&amp;lt;d1)，即所有记录放在同一组中进行直接插入排序为止。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_me4.png&quot; alt=&quot;希尔排序&quot;&gt;&lt;/p&gt;
 &lt;ul&gt;

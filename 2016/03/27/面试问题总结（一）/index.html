@@ -74,7 +74,7 @@
 <meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog_me6.png">
 <meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog_me5.png">
 <meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog_me4.png">
-<meta property="og:updated_time" content="2016-03-29T05:15:47.103Z">
+<meta property="og:updated_time" content="2016-03-29T05:17:23.090Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试问题总结（一）">
 <meta name="twitter:description" content="简介根据一位舍友在之前去阿里面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。
@@ -399,7 +399,9 @@
 <h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>每遍遍历后，同时选出min和max，分别交换到left和right（如果先交换min和left，注意在max==left的情况下，交换后要更新max为min）</p>
 <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="查找优化"><a href="#查找优化" class="headerlink" title="查找优化"></a>查找优化</h3><blockquote>
 <p>在有序区中查找新元素插入位置时，为了减少元素比较次数提高效率，采用<strong>二分查找算法</strong>进行插入位置的确定</p>
-<h3 id="分治优化（希尔排序）"><a href="#分治优化（希尔排序）" class="headerlink" title="分治优化（希尔排序）"></a>分治优化（希尔排序）</h3><p>具体如下（实现为升序）：<br><br>1.先取一个小于n的整数d1作为第一个增量，将所有距离为d1的倍数的记录放在同一个组中，把无序数组分割为若干个子序列。<br><br>2.在各子序列内进行直接插入排序。<br><br>3.然后取第二个增量d2&lt;d1，重复步骤1~2，直至所取的增量dt=1(dt&lt;dt-l&lt;…&lt;d2&lt;d1)，即所有记录放在同一组中进行直接插入排序为止。</p>
+</blockquote>
+<h3 id="分治优化（希尔排序）"><a href="#分治优化（希尔排序）" class="headerlink" title="分治优化（希尔排序）"></a>分治优化（希尔排序）</h3><blockquote>
+<p>具体如下（实现为升序）：<br>1.先取一个小于n的整数d1作为第一个增量，将所有距离为d1的倍数的记录放在同一个组中，把无序数组分割为若干个子序列。<br>2.在各子序列内进行直接插入排序。<br>3.然后取第二个增量d2&lt;d1，重复步骤1~2，直至所取的增量dt=1(dt&lt;dt-l&lt;…&lt;d2&lt;d1)，即所有记录放在同一组中进行直接插入排序为止。</p>
 </blockquote>
 <p><img src="http://7xs3wx.com1.z0.glb.clouddn.com/blog_me4.png" alt="希尔排序"></p>
 <ul>
