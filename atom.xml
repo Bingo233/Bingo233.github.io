@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-29T02:23:49.678Z</updated>
+  <updated>2016-03-29T04:00:08.593Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/03/27/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>http://yoursite.com/2016/03/27/面试问题总结（一）/</id>
     <published>2016-03-27T04:11:24.000Z</published>
-    <updated>2016-03-29T02:23:49.678Z</updated>
+    <updated>2016-03-29T04:00:08.593Z</updated>
     
     <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;根据一位舍友在之前去&lt;strong&gt;阿里&lt;/strong&gt;面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。&lt;/p&gt;
 &lt;ul&gt;
@@ -28,7 +28,42 @@
 &lt;li&gt;[算法] 快速排序如何优化&lt;/li&gt;
 &lt;/ul&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;StringBuilder-和-StringBuffer-的区别&quot;&gt;&lt;a href=&quot;#StringBuilder-和-StringBuffer-的区别&quot; class=&quot;headerlink&quot; title=&quot;StringBuilder 和 StringBuffer 的区别&quot;&gt;&lt;/a&gt;StringBuilder 和 StringBuffer 的区别&lt;/h1&gt;&lt;h1 id=&quot;快速排序如何优化&quot;&gt;&lt;a href=&quot;#快速排序如何优化&quot; class=&quot;headerlink&quot; title=&quot;快速排序如何优化&quot;&gt;&lt;/a&gt;快速排序如何优化&lt;/h1&gt;&lt;p&gt;这个问题突然一听感觉无从下手，（啊嘞？快排不是最快的基于比较的排序算法吗！）这里注意： 快排只是平均速度最快，达到O(nlogn)，而最坏情况下（已经排序好的输入下）达到O(n²)，接近于冒泡排序！ 因此，改进对最快情况的处理就可以优化快速排序啦~&lt;/p&gt;
+&lt;h1 id=&quot;StringBuilder-和-StringBuffer-的区别&quot;&gt;&lt;a href=&quot;#StringBuilder-和-StringBuffer-的区别&quot; class=&quot;headerlink&quot; title=&quot;StringBuilder 和 StringBuffer 的区别&quot;&gt;&lt;/a&gt;StringBuilder 和 StringBuffer 的区别&lt;/h1&gt;&lt;h2 id=&quot;相同点：&quot;&gt;&lt;a href=&quot;#相同点：&quot; class=&quot;headerlink&quot; title=&quot;相同点：&quot;&gt;&lt;/a&gt;相同点：&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;首先，二者都是在各自的生成器内部维护了一个可变容量的字符数组缓冲区；&lt;/p&gt;
+&lt;p&gt;然后，二者都是利用 &lt;strong&gt;insert&lt;/strong&gt; 和 &lt;strong&gt;append&lt;/strong&gt; 方法对缓冲区进行操作；&lt;/p&gt;
+&lt;p&gt;还有就是， 二者在字符序列的长度超过缓冲区容量时，容量会自动增长。&lt;/p&gt;
+&lt;h2 id=&quot;不同点：&quot;&gt;&lt;a href=&quot;#不同点：&quot; class=&quot;headerlink&quot; title=&quot;不同点：&quot;&gt;&lt;/a&gt;不同点：&lt;/h2&gt;&lt;p&gt;StringBuffer是线程安全的，即内部执行同步；&lt;/p&gt;
+&lt;p&gt;而StringBuider是从JDK5开始为StringBuffer补充的非同步实现。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;通常应该优先使用 StringBuilder 类，因为它支持所有相同的操作，但由于它不执行同步，所以速度更快。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;Java中线程安全和非线程安全的类&quot;&gt;&lt;a href=&quot;#Java中线程安全和非线程安全的类&quot; class=&quot;headerlink&quot; title=&quot;Java中线程安全和非线程安全的类&quot;&gt;&lt;/a&gt;Java中线程安全和非线程安全的类&lt;/h1&gt;&lt;p&gt;常见的有： &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;数组&lt;/strong&gt;与 &lt;strong&gt;Vector&lt;/strong&gt;(可变数组，同步故效率低)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HashMap&lt;/strong&gt;,&lt;strong&gt;HashSet&lt;/strong&gt;等（非同步）与 &lt;strong&gt;Hashtable&lt;/strong&gt;(同步)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;提到线程安全，不得不提的是 Java中的 &lt;strong&gt;java.util.concurrent&lt;/strong&gt; 这个包！ 它为&lt;strong&gt;并发编程&lt;/strong&gt;提供了强大的辅助工具类。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Executors&lt;/strong&gt;四种简单方法创建 &lt;strong&gt;ExecutorService&lt;/strong&gt; ：newCachedThreadPool、newFixSizeThreadExecutor、newScheduledExecutor、newSingleThreadExecutor；&lt;/p&gt;
+&lt;p&gt;可执行由 Callable 表示的任何函数，Future 返回函数的结果。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;java.util.concurrent &lt;em&gt;ConcurrentLinkedQueue&lt;/em&gt; 类提供了高效的、可伸缩的、线程安全的非阻塞 FIFO 队列。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;java.util.concurrent 中的五个实现都支持扩展的 &lt;em&gt;BlockingQueue&lt;/em&gt; 接口，该接口定义了 put 和 take 的阻塞版本：&lt;strong&gt;LinkedBlockingQueue&lt;/strong&gt;、&lt;strong&gt;ArrayBlockingQueue&lt;/strong&gt;、&lt;strong&gt;SynchronousQueue&lt;/strong&gt;、&lt;br&gt;&lt;strong&gt;PriorityBlockingQueue&lt;/strong&gt; 和 &lt;strong&gt;DelayQueue&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;TimeUnit&lt;/strong&gt; 类为指定和控制基于超时的操作提供了多重粒度（包括纳秒级）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;四个类可协助实现常见的专用同步语句。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Semaphore&lt;/strong&gt; 是一个经典的并发工具，和c中的信号量一致。 &lt;strong&gt;CountDownLatch&lt;/strong&gt;是一个极其简单但又极其常用的实用工具，用于在保持给定数目的信号、事件或条件前阻塞执行。 &lt;strong&gt;CyclicBarrier&lt;/strong&gt; 是一个可重置的多路同步点，在某些并行编程风格中很有用。 &lt;strong&gt;Exchanger&lt;/strong&gt; 允许两个线程在集合点交换对象，它在多流水线设计中是有用的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;除队列外，此包还提供了几个设计用于多线程上下文中的 Collection 实现：&lt;strong&gt;ConcurrentHashMap&lt;/strong&gt;、&lt;strong&gt;CopyOnWriteArrayList&lt;/strong&gt; 和 &lt;strong&gt;CopyOnWriteArraySet&lt;/strong&gt;。 &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(&lt;em&gt;以下摘自百度&lt;/em&gt;) 此包中与某些类一起使用的“Concurrent&amp;amp;rdquo前缀;是一种简写，表明与类似的“同步”类有所不同。例如，&lt;strong&gt;java.util.Hashtable&lt;/strong&gt; 和 &lt;strong&gt;Collections.synchronizedMap(new HashMap())&lt;/strong&gt; 是同步的，但 &lt;strong&gt;ConcurrentHashMap&lt;/strong&gt; 则是“并发的”。并发集合是线程安全的，但是不受单个排他锁定的管理。在 ConcurrentHashMap 这一特定情况下，它可以安全地允许进行任意数目的并发读取，以及数目可调的并发写入。需要通过单个锁定阻止对集合的所有访问时，“同步”类是很有用的，其代价是较差的可伸缩性。在期望多个线程访问公共集合的其他情况中，通常“并发”版本要更好一些。当集合是未共享的，或者仅保持其他锁定时集合是可访问的情况下，非同步集合则要更好一些。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;大多数并发 Collection 实现（包括大多数 Queue）与常规的 java.util 约定也不同，因为它们的迭代器提供了弱一致的&lt;/strong&gt;，而不是快速失败的遍历。弱一致的迭代器是线程安全的，但是在迭代时没有必要冻结集合，所以它不一定反映自迭代器创建以来的所有更新。 &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;快速排序如何优化&quot;&gt;&lt;a href=&quot;#快速排序如何优化&quot; class=&quot;headerlink&quot; title=&quot;快速排序如何优化&quot;&gt;&lt;/a&gt;快速排序如何优化&lt;/h1&gt;&lt;p&gt;这个问题突然一听感觉无从下手，（啊嘞？快排不是最快的基于比较的排序算法吗！）这里注意： 快排只是平均速度最快，达到O(nlogn)，而最坏情况下（已经排序好的输入下）达到O(n²)，接近于冒泡排序！ 因此，改进对最快情况的处理就可以优化快速排序啦~&lt;/p&gt;
 &lt;p&gt;主要参考了&lt;a href=&quot;http://www.blogjava.net/killme2008/archive/2010/09/08/quicksort_optimized.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;快速排序及优化&lt;/a&gt;，这篇文章分析的很全面~&lt;/p&gt;
 &lt;h2 id=&quot;P1版本：基础&quot;&gt;&lt;a href=&quot;#P1版本：基础&quot; class=&quot;headerlink&quot; title=&quot;P1版本：基础&quot;&gt;&lt;/a&gt;P1版本：基础&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;选择左端点（或右断点）为pivot, 遍历数组元素与pivot进行比较并将较小交换至左边，最后将左端点（或右断点）交换到中间位置。&lt;/p&gt;
