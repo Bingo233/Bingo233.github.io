@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-29T04:05:35.340Z</updated>
+  <updated>2016-03-29T04:22:47.325Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/03/27/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>http://yoursite.com/2016/03/27/面试问题总结（一）/</id>
     <published>2016-03-27T04:11:24.000Z</published>
-    <updated>2016-03-29T04:05:35.340Z</updated>
+    <updated>2016-03-29T04:22:47.325Z</updated>
     
     <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;根据一位舍友在之前去&lt;strong&gt;阿里&lt;/strong&gt;面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。&lt;/p&gt;
 &lt;ul&gt;
@@ -81,7 +81,9 @@
 &lt;h2 id=&quot;P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&quot;&gt;&lt;a href=&quot;#P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&quot; class=&quot;headerlink&quot; title=&quot;P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&quot;&gt;&lt;/a&gt;P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;大小大于40的数组使用median-of-nine选择pivot，大小在7到40之间的数组使用median-of-three选择中数，大小等于7的数组直接选择中数，大小小于7的数组则直接使用插入排序&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;P6增强版：将P3版本中的”fat-partition”增强为”split-end”&quot;&gt;&lt;a href=&quot;#P6增强版：将P3版本中的”fat-partition”增强为”split-end”&quot; class=&quot;headerlink&quot; title=&quot;P6增强版：将P3版本中的”fat partition”增强为”split-end”&quot;&gt;&lt;/a&gt;P6增强版：将P3版本中的”fat partition”增强为”split-end”&lt;/h2&gt;</content>
+&lt;h2 id=&quot;P7版本：将P3版本中的”fat-partition”改进为”split-end”&quot;&gt;&lt;a href=&quot;#P7版本：将P3版本中的”fat-partition”改进为”split-end”&quot; class=&quot;headerlink&quot; title=&quot;P7版本：将P3版本中的”fat-partition”改进为”split-end”&quot;&gt;&lt;/a&gt;P7版本：将P3版本中的”fat-partition”改进为”split-end”&lt;/h2&gt;&lt;p&gt;之前的做法是将大于等于或小于等于pivot的元素交换到两边，中间剩余pivot: &lt;br&gt;&lt;br&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_me6.png&quot; alt=&quot;fat-partition&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Arrays.sort()所采用的做法进行两端扫描，但是遇到等于pivot的元素不是进行互换，而是各自交换到两端。当扫描结束，还要将两端这些跟pivot equals的元素交换到中间位置，不相同的元素交换到两端，左边仍然是比pivot小的，右边是比pivot大的，分别进行递归的快速排序处理:   (虽然看上去增加了交换的次数，但与pivot相等的元素就不会被重复处理~) &lt;br&gt;&lt;br&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_me5.png&quot; alt=&quot;splite-end&quot;&gt;&lt;/p&gt;
+</content>
     
     <summary type="html">
     

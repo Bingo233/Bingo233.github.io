@@ -71,13 +71,16 @@
 
 [Java] StringBuilder 和 StringBuffer 的区别 
 [算法] 快速排序如何优化">
-<meta property="og:updated_time" content="2016-03-29T04:05:35.340Z">
+<meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog_me6.png">
+<meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog_me5.png">
+<meta property="og:updated_time" content="2016-03-29T04:22:47.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试问题总结（一）">
 <meta name="twitter:description" content="简介根据一位舍友在之前去阿里面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。
 
 [Java] StringBuilder 和 StringBuffer 的区别 
 [算法] 快速排序如何优化">
+<meta name="twitter:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/blog_me6.png">
 
 
 
@@ -389,7 +392,9 @@
 <h2 id="P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）"><a href="#P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）" class="headerlink" title="P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）"></a>P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）</h2><blockquote>
 <p>大小大于40的数组使用median-of-nine选择pivot，大小在7到40之间的数组使用median-of-three选择中数，大小等于7的数组直接选择中数，大小小于7的数组则直接使用插入排序</p>
 </blockquote>
-<h2 id="P6增强版：将P3版本中的”fat-partition”增强为”split-end”"><a href="#P6增强版：将P3版本中的”fat-partition”增强为”split-end”" class="headerlink" title="P6增强版：将P3版本中的”fat partition”增强为”split-end”"></a>P6增强版：将P3版本中的”fat partition”增强为”split-end”</h2>
+<h2 id="P7版本：将P3版本中的”fat-partition”改进为”split-end”"><a href="#P7版本：将P3版本中的”fat-partition”改进为”split-end”" class="headerlink" title="P7版本：将P3版本中的”fat-partition”改进为”split-end”"></a>P7版本：将P3版本中的”fat-partition”改进为”split-end”</h2><p>之前的做法是将大于等于或小于等于pivot的元素交换到两边，中间剩余pivot: <br><br><img src="http://7xs3wx.com1.z0.glb.clouddn.com/blog_me6.png" alt="fat-partition"></p>
+<p>Arrays.sort()所采用的做法进行两端扫描，但是遇到等于pivot的元素不是进行互换，而是各自交换到两端。当扫描结束，还要将两端这些跟pivot equals的元素交换到中间位置，不相同的元素交换到两端，左边仍然是比pivot小的，右边是比pivot大的，分别进行递归的快速排序处理:   (虽然看上去增加了交换的次数，但与pivot相等的元素就不会被重复处理~) <br><br><img src="http://7xs3wx.com1.z0.glb.clouddn.com/blog_me5.png" alt="splite-end"></p>
+
       
     </div>
 
@@ -587,7 +592,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuilder-和-StringBuffer-的区别"><span class="nav-number">2.</span> <span class="nav-text">StringBuilder 和 StringBuffer 的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相同点："><span class="nav-number">2.1.</span> <span class="nav-text">相同点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同点："><span class="nav-number">2.2.</span> <span class="nav-text">不同点：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中线程安全和非线程安全的类"><span class="nav-number">3.</span> <span class="nav-text">Java中线程安全和非线程安全的类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序如何优化"><span class="nav-number">4.</span> <span class="nav-text">快速排序如何优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#P1版本：基础"><span class="nav-number">4.1.</span> <span class="nav-text">P1版本：基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P2版本：优化排序好数组的情况"><span class="nav-number">4.2.</span> <span class="nav-text">P2版本：优化排序好数组的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P3版本：更高效的划分方法"><span class="nav-number">4.3.</span> <span class="nav-text">P3版本：更高效的划分方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P4-P5版本：在排序好数组情况下，快排为O-n²-，插入排序为O-n"><span class="nav-number">4.4.</span> <span class="nav-text">P4/P5版本：在排序好数组情况下，快排为O(n²)，插入排序为O(n)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）"><span class="nav-number">4.5.</span> <span class="nav-text">P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P6增强版：将P3版本中的”fat-partition”增强为”split-end”"><span class="nav-number">4.6.</span> <span class="nav-text">P6增强版：将P3版本中的”fat partition”增强为”split-end”</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuilder-和-StringBuffer-的区别"><span class="nav-number">2.</span> <span class="nav-text">StringBuilder 和 StringBuffer 的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相同点："><span class="nav-number">2.1.</span> <span class="nav-text">相同点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同点："><span class="nav-number">2.2.</span> <span class="nav-text">不同点：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中线程安全和非线程安全的类"><span class="nav-number">3.</span> <span class="nav-text">Java中线程安全和非线程安全的类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序如何优化"><span class="nav-number">4.</span> <span class="nav-text">快速排序如何优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#P1版本：基础"><span class="nav-number">4.1.</span> <span class="nav-text">P1版本：基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P2版本：优化排序好数组的情况"><span class="nav-number">4.2.</span> <span class="nav-text">P2版本：优化排序好数组的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P3版本：更高效的划分方法"><span class="nav-number">4.3.</span> <span class="nav-text">P3版本：更高效的划分方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P4-P5版本：在排序好数组情况下，快排为O-n²-，插入排序为O-n"><span class="nav-number">4.4.</span> <span class="nav-text">P4/P5版本：在排序好数组情况下，快排为O(n²)，插入排序为O(n)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）"><span class="nav-number">4.5.</span> <span class="nav-text">P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P7版本：将P3版本中的”fat-partition”改进为”split-end”"><span class="nav-number">4.6.</span> <span class="nav-text">P7版本：将P3版本中的”fat-partition”改进为”split-end”</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
