@@ -71,7 +71,7 @@
 
 [Java] StringBuilder 和 StringBuffer 的区别 
 [算法] 快速排序如何优化">
-<meta property="og:updated_time" content="2016-03-28T16:03:52.804Z">
+<meta property="og:updated_time" content="2016-03-29T02:23:49.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试问题总结（一）">
 <meta name="twitter:description" content="简介根据一位舍友在之前去阿里面试所带来的反馈，以下总结几个有些深入、但不算困难的技术问题。
@@ -336,7 +336,7 @@
 <li>[算法] 快速排序如何优化</li>
 </ul>
 <a id="more"></a>
-<h1 id="快速排序如何优化"><a href="#快速排序如何优化" class="headerlink" title="快速排序如何优化"></a>快速排序如何优化</h1><p>这个问题突然一听感觉无从下手，（啊嘞？快排不是最快的基于比较的排序算法吗！）这里注意： 快排只是平均速度最快，达到O(nlogn)，而最坏情况下（已经排序好的输入下）达到O(n²)，接近于冒泡排序！ 因此，改进对最快情况的处理就可以优化快速排序啦~</p>
+<h1 id="StringBuilder-和-StringBuffer-的区别"><a href="#StringBuilder-和-StringBuffer-的区别" class="headerlink" title="StringBuilder 和 StringBuffer 的区别"></a>StringBuilder 和 StringBuffer 的区别</h1><h1 id="快速排序如何优化"><a href="#快速排序如何优化" class="headerlink" title="快速排序如何优化"></a>快速排序如何优化</h1><p>这个问题突然一听感觉无从下手，（啊嘞？快排不是最快的基于比较的排序算法吗！）这里注意： 快排只是平均速度最快，达到O(nlogn)，而最坏情况下（已经排序好的输入下）达到O(n²)，接近于冒泡排序！ 因此，改进对最快情况的处理就可以优化快速排序啦~</p>
 <p>主要参考了<a href="http://www.blogjava.net/killme2008/archive/2010/09/08/quicksort_optimized.html" target="_blank" rel="external">快速排序及优化</a>，这篇文章分析的很全面~</p>
 <h2 id="P1版本：基础"><a href="#P1版本：基础" class="headerlink" title="P1版本：基础"></a>P1版本：基础</h2><blockquote>
 <p>选择左端点（或右断点）为pivot, 遍历数组元素与pivot进行比较并将较小交换至左边，最后将左端点（或右断点）交换到中间位置。</p>
@@ -493,7 +493,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -552,7 +552,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序如何优化"><span class="nav-number">2.</span> <span class="nav-text">快速排序如何优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#P1版本：基础"><span class="nav-number">2.1.</span> <span class="nav-text">P1版本：基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P2版本：优化排序好数组的情况"><span class="nav-number">2.2.</span> <span class="nav-text">P2版本：优化排序好数组的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P3版本：更高效的划分方法"><span class="nav-number">2.3.</span> <span class="nav-text">P3版本：更高效的划分方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P4-P5版本：在排序好数组情况下，快排为O-n²-，插入排序为O-n"><span class="nav-number">2.4.</span> <span class="nav-text">P4/P5版本：在排序好数组情况下，快排为O(n²)，插入排序为O(n)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）"><span class="nav-number">2.5.</span> <span class="nav-text">P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P6增强版：将P3版本中的”fat-partition”增强为”split-end”"><span class="nav-number">2.6.</span> <span class="nav-text">P6增强版：将P3版本中的”fat partition”增强为”split-end”</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuilder-和-StringBuffer-的区别"><span class="nav-number">2.</span> <span class="nav-text">StringBuilder 和 StringBuffer 的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序如何优化"><span class="nav-number">3.</span> <span class="nav-text">快速排序如何优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#P1版本：基础"><span class="nav-number">3.1.</span> <span class="nav-text">P1版本：基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P2版本：优化排序好数组的情况"><span class="nav-number">3.2.</span> <span class="nav-text">P2版本：优化排序好数组的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P3版本：更高效的划分方法"><span class="nav-number">3.3.</span> <span class="nav-text">P3版本：更高效的划分方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P4-P5版本：在排序好数组情况下，快排为O-n²-，插入排序为O-n"><span class="nav-number">3.4.</span> <span class="nav-text">P4/P5版本：在排序好数组情况下，快排为O(n²)，插入排序为O(n)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）"><span class="nav-number">3.5.</span> <span class="nav-text">P6版本：优化pivot的选取（因为P2版本中随机数生成器开销很大）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P6增强版：将P3版本中的”fat-partition”增强为”split-end”"><span class="nav-number">3.6.</span> <span class="nav-text">P6增强版：将P3版本中的”fat partition”增强为”split-end”</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
