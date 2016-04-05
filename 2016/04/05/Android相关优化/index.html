@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -59,28 +59,16 @@
 
 
 
-<meta name="description" content="简介这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~
-
-[Java] 各种 XXXMap 的底层实现~ / volatile修饰符的作用~ / 
-[操作系统] 进程状态的转换 / 
-[计网] 七层协议 / 三次握手过程 / 网关是怎么区分内网不同的机器的 / 内部的机器的IP与外界交互的过程是什么 / 端口的作用 / 迅雷如何实现限速 /">
+<meta name="description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试问题总结（二）">
-<meta property="og:url" content="http://yoursite.com/2016/04/04/面试问题总结（二）/index.html">
+<meta property="og:title" content="Android优化">
+<meta property="og:url" content="http://yoursite.com/2016/04/05/Android相关优化/index.html">
 <meta property="og:site_name" content="Pantsu's Blog">
-<meta property="og:description" content="简介这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~
-
-[Java] 各种 XXXMap 的底层实现~ / volatile修饰符的作用~ / 
-[操作系统] 进程状态的转换 / 
-[计网] 七层协议 / 三次握手过程 / 网关是怎么区分内网不同的机器的 / 内部的机器的IP与外界交互的过程是什么 / 端口的作用 / 迅雷如何实现限速 /">
-<meta property="og:updated_time" content="2016-04-05T12:01:37.656Z">
+<meta property="og:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；">
+<meta property="og:updated_time" content="2016-04-05T12:28:22.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试问题总结（二）">
-<meta name="twitter:description" content="简介这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~
-
-[Java] 各种 XXXMap 的底层实现~ / volatile修饰符的作用~ / 
-[操作系统] 进程状态的转换 / 
-[计网] 七层协议 / 三次握手过程 / 网关是怎么区分内网不同的机器的 / 内部的机器的IP与外界交互的过程是什么 / 端口的作用 / 迅雷如何实现限速 /">
+<meta name="twitter:title" content="Android优化">
+<meta name="twitter:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；">
 
 
 
@@ -98,7 +86,7 @@
   };
 </script>
 
-  <title> 面试问题总结（二） | Pantsu's Blog </title>
+  <title> Android优化 | Pantsu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +256,7 @@
             
             
               
-                面试问题总结（二）
+                Android优化
               
             
           </h1>
@@ -280,8 +268,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-04T22:23:01+08:00" content="2016-04-04">
-              2016-04-04
+            <time itemprop="dateCreated" datetime="2016-04-05T23:21:04+08:00" content="2016-04-05">
+              2016-04-05
             </time>
           </span>
 
@@ -294,8 +282,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -310,8 +298,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/04/面试问题总结（二）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/04/面试问题总结（二）/" itemprop="commentsCount"></span>
+                <a href="/2016/04/05/Android相关优化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/Android相关优化/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,20 +321,10 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~</p>
-<ul>
-<li>[Java] 各种 XXXMap 的底层实现~ / volatile修饰符的作用~ / </li>
-<li>[操作系统] 进程状态的转换 / </li>
-<li>[计网] 七层协议 / 三次握手过程 / 网关是怎么区分内网不同的机器的 / 内部的机器的IP与外界交互的过程是什么 / 端口的作用 / 迅雷如何实现限速 /</li>
-</ul>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。<br>因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 <strong>内存优化</strong>很重要，主要针对占内存比较大的资源，如 <strong>Bitmap</strong> ； 有时需要频繁访问网络获取数据时， 有必要进行<strong>网络访问优化</strong>；</p>
 <a id="more"></a>
-<h1 id="关于Java"><a href="#关于Java" class="headerlink" title="关于Java"></a>关于Java</h1><p>volatile修饰符的作用</p>
-<blockquote>
-<p>编译器对访问该变量的代码就不再进行优化，从而可以提供对特殊地址的稳定访问。<br>所谓稳定访问，即每次访问时不访问缓存的值，直接从内存获取。</p>
-</blockquote>
-<p>简单地说就是防止编译器对代码进行优化.比如如下程序,编译器会自动忽略前三条语句~<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x55</span>;</span><br><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x56</span>;</span><br><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x57</span>;</span><br><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x58</span>;</span><br></pre></td></tr></table></figure></p>
-<p>下面的函数被用来计算某个整数的平方，它不能实现预期设计目标<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">square</span><span class="params">(<span class="keyword">volatile</span> <span class="keyword">int</span> *ptr)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((*ptr) * (*ptr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<hr>
+<h1 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h1><p>首先，不得不提到Java的垃圾回收（GC）机制和四种对象的引用级别~</p>
+
       
     </div>
 
@@ -360,7 +338,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag">#Java</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
         </div>
       
@@ -369,17 +347,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/04/笔试问题总结（一）/" rel="next" title="笔试问题总结（一）">
-                <i class="fa fa-chevron-left"></i> 笔试问题总结（一）
+              <a href="/2016/04/04/面试问题总结（二）/" rel="next" title="面试问题总结（二）">
+                <i class="fa fa-chevron-left"></i> 面试问题总结（二）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/05/Android相关优化/" rel="prev" title="Android优化">
-                Android优化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -394,10 +368,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/04/面试问题总结（二）/"
-     data-title="面试问题总结（二）"
+        <div class="ds-share flat" data-thread-key="2016/04/05/Android相关优化/"
+     data-title="Android优化"
      data-content=""
-     data-url="http://yoursite.com/2016/04/04/面试问题总结（二）/">
+     data-url="http://yoursite.com/2016/04/05/Android相关优化/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -424,8 +398,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/04/面试问题总结（二）/"
-           data-title="面试问题总结（二）" data-url="http://yoursite.com/2016/04/04/面试问题总结（二）/">
+      <div class="ds-thread" data-thread-key="2016/04/05/Android相关优化/"
+           data-title="Android优化" data-url="http://yoursite.com/2016/04/05/Android相关优化/">
       </div>
     
   </div>
@@ -546,7 +520,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于Java"><span class="nav-number">2.</span> <span class="nav-text">关于Java</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存优化"><span class="nav-number">2.</span> <span class="nav-text">内存优化</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

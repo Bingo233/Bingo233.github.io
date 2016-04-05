@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-05T04:47:25.275Z</updated>
+  <updated>2016-04-05T12:28:22.846Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,27 +16,59 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android优化</title>
+    <link href="http://yoursite.com/2016/04/05/Android%E7%9B%B8%E5%85%B3%E4%BC%98%E5%8C%96/"/>
+    <id>http://yoursite.com/2016/04/05/Android相关优化/</id>
+    <published>2016-04-05T15:21:04.000Z</published>
+    <updated>2016-04-05T12:28:22.846Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。&lt;br&gt;因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 &lt;strong&gt;内存优化&lt;/strong&gt;很重要，主要针对占内存比较大的资源，如 &lt;strong&gt;Bitmap&lt;/strong&gt; ； 有时需要频繁访问网络获取数据时， 有必要进行&lt;strong&gt;网络访问优化&lt;/strong&gt;；&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;内存优化&quot;&gt;&lt;a href=&quot;#内存优化&quot; class=&quot;headerlink&quot; title=&quot;内存优化&quot;&gt;&lt;/a&gt;内存优化&lt;/h1&gt;&lt;p&gt;首先，不得不提到Java的垃圾回收（GC）机制和四种对象的引用级别~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。&lt;br&gt;因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 &lt;strong&gt;内存优化&lt;/strong&gt;很重要，主要针对占内存比较大的资源，如 &lt;strong&gt;Bitmap&lt;/strong&gt; ； 有时需要频繁访问网络获取数据时， 有必要进行&lt;strong&gt;网络访问优化&lt;/strong&gt;；&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>面试问题总结（二）</title>
     <link href="http://yoursite.com/2016/04/04/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
     <id>http://yoursite.com/2016/04/04/面试问题总结（二）/</id>
     <published>2016-04-04T14:23:01.000Z</published>
-    <updated>2016-04-05T04:47:25.275Z</updated>
+    <updated>2016-04-05T12:01:37.656Z</updated>
     
     <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;[Java] 各种 XXXMap 的底层实现~ （听说这个是面Android时遇到的问题蛤 O.O）&lt;/li&gt;
-&lt;li&gt;[操作系统] 进程状态的转换/&lt;/li&gt;
-&lt;li&gt;[计网] 七层协议/三次握手过程/网关是怎么区分内网不同的机器的/内部的机器的IP与外界交互的过程是什么/端口的作用/迅雷如何实现限速/&lt;/li&gt;
+&lt;li&gt;[Java] 各种 XXXMap 的底层实现~ / volatile修饰符的作用~ / &lt;/li&gt;
+&lt;li&gt;[操作系统] 进程状态的转换 / &lt;/li&gt;
+&lt;li&gt;[计网] 七层协议 / 三次握手过程 / 网关是怎么区分内网不同的机器的 / 内部的机器的IP与外界交互的过程是什么 / 端口的作用 / 迅雷如何实现限速 /&lt;/li&gt;
 &lt;/ul&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;</content>
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;关于Java&quot;&gt;&lt;a href=&quot;#关于Java&quot; class=&quot;headerlink&quot; title=&quot;关于Java&quot;&gt;&lt;/a&gt;关于Java&lt;/h1&gt;&lt;p&gt;volatile修饰符的作用&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;编译器对访问该变量的代码就不再进行优化，从而可以提供对特殊地址的稳定访问。&lt;br&gt;所谓稳定访问，即每次访问时不访问缓存的值，直接从内存获取。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;简单地说就是防止编译器对代码进行优化.比如如下程序,编译器会自动忽略前三条语句~&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;XBYTE[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]=&lt;span class=&quot;number&quot;&gt;0x55&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;XBYTE[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]=&lt;span class=&quot;number&quot;&gt;0x56&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;XBYTE[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]=&lt;span class=&quot;number&quot;&gt;0x57&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;XBYTE[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]=&lt;span class=&quot;number&quot;&gt;0x58&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;下面的函数被用来计算某个整数的平方，它不能实现预期设计目标&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;volatile&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; *ptr)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; ((*ptr) * (*ptr));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;</content>
     
     <summary type="html">
     
       &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;[Java] 各种 XXXMap 的底层实现~ （听说这个是面Android时遇到的问题蛤 O.O）&lt;/li&gt;
-&lt;li&gt;[操作系统] 进程状态的转换/&lt;/li&gt;
-&lt;li&gt;[计网] 七层协议/三次握手过程/网关是怎么区分内网不同的机器的/内部的机器的IP与外界交互的过程是什么/端口的作用/迅雷如何实现限速/&lt;/li&gt;
+&lt;li&gt;[Java] 各种 XXXMap 的底层实现~ / volatile修饰符的作用~ / &lt;/li&gt;
+&lt;li&gt;[操作系统] 进程状态的转换 / &lt;/li&gt;
+&lt;li&gt;[计网] 七层协议 / 三次握手过程 / 网关是怎么区分内网不同的机器的 / 内部的机器的IP与外界交互的过程是什么 / 端口的作用 / 迅雷如何实现限速 /&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -53,7 +85,7 @@
     <link href="http://yoursite.com/2016/04/04/%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>http://yoursite.com/2016/04/04/笔试问题总结（一）/</id>
     <published>2016-04-04T04:01:11.000Z</published>
-    <updated>2016-04-05T05:08:43.624Z</updated>
+    <updated>2016-04-05T11:51:52.336Z</updated>
     
     <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;昨晚做了 &lt;strong&gt;腾讯-移动端&lt;/strong&gt; 的笔试，包括选择题和问答题。&lt;/p&gt;
 &lt;p&gt;选择题主要有c++，数据库，数据结构，ios/android;&lt;/p&gt;
@@ -67,13 +99,27 @@
 &lt;h1 id=&quot;数据库中NULL的排序（比较）问题&quot;&gt;&lt;a href=&quot;#数据库中NULL的排序（比较）问题&quot; class=&quot;headerlink&quot; title=&quot;数据库中NULL的排序（比较）问题&quot;&gt;&lt;/a&gt;数据库中NULL的排序（比较）问题&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;在数据库中，判定是否为null的语句是 is (not) null&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne1.png&quot; alt=&quot;测试一&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne2.png&quot; alt=&quot;测试二&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne3.png&quot; alt=&quot;测试三&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne1.png&quot; alt=&quot;测试一&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne2.png&quot; alt=&quot;测试二&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne3.png&quot; alt=&quot;测试三&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+
 &lt;h1 id=&quot;关于Android-的垃圾回收机制&quot;&gt;&lt;a href=&quot;#关于Android-的垃圾回收机制&quot; class=&quot;headerlink&quot; title=&quot;关于Android 的垃圾回收机制&quot;&gt;&lt;/a&gt;关于Android 的垃圾回收机制&lt;/h1&gt;&lt;p&gt;关于&lt;strong&gt;Android - GC&lt;/strong&gt;出现了两个选项：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;在GC发生时，会暂停Activity/Service的运行？&lt;/li&gt;
+&lt;li&gt;在GC发生时，会暂停Activity/Service的运行（挂起）？&lt;/li&gt;
 &lt;li&gt;在GC_EXPLICIT发生时，软引用会被清除？&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;为了了解Android的GC 过程，参考以下文章：&lt;br&gt;&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/luoshengyang/article/details/41822747&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dalvik虚拟机垃圾收集（GC）过程分析&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/coding_or_coded/article/details/6603549&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Java四种引用类型&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为了了解Android的GC 过程，参考以下文章：&lt;br&gt;&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/luoshengyang/article/details/41822747&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dalvik虚拟机垃圾收集（GC）过程分析&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;GC的种类&quot;&gt;&lt;a href=&quot;#GC的种类&quot; class=&quot;headerlink&quot; title=&quot;GC的种类&quot;&gt;&lt;/a&gt;GC的种类&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;GC_MALLOC, 堆内存分配失败时触发&lt;br&gt;GC_CONCURRENT，当分配的对象大小超过384K时触发&lt;br&gt;GC_EXPLICIT，对垃圾收集的显式调用(System.gc)&lt;br&gt;GC_EXTERNAL_ALLOC，外部内存分配失败时触发&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;GC何时发生&quot;&gt;&lt;a href=&quot;#GC何时发生&quot; class=&quot;headerlink&quot; title=&quot;GC何时发生&quot;&gt;&lt;/a&gt;GC何时发生&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Dalvik虚拟机线程被挂起等待GC时，它们总是挂起在&lt;strong&gt;IF、GOTO、SWITCH、RETURN&lt;/strong&gt;和&lt;strong&gt;THROW&lt;/strong&gt;等跳转指令中。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;GC是否并行，是否会挂起当前进程内的线程&quot;&gt;&lt;a href=&quot;#GC是否并行，是否会挂起当前进程内的线程&quot; class=&quot;headerlink&quot; title=&quot;GC是否并行，是否会挂起当前进程内的线程&quot;&gt;&lt;/a&gt;GC是否并行，是否会挂起当前进程内的线程&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;并行和非并行GC的主要区别在于，前者在GC过程中，有条件地挂起和唤醒非GC线程，而后者在执行GC的过程中，一直都是挂起非GC线程的。 并行GC通过有条件地挂起和唤醒非GC线程，就可以使得应用程序获得更好的响应性。但是我们也应该看到，并行GC需要多执行一次标记根集对象以及递归标记那些在GC过程被访问了的对象的操作。&lt;br&gt;也就是说，并行GC在使用得应用程序获得更好的响应性的同时，也需要花费更多的CPU资源。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;GC时引用对象的清除&quot;&gt;&lt;a href=&quot;#GC时引用对象的清除&quot; class=&quot;headerlink&quot; title=&quot;GC时引用对象的清除&quot;&gt;&lt;/a&gt;GC时引用对象的清除&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;引用类型的对象，例如SoftReference、WeakReference、PhantomReference和FinalizerReference（重写了finalize方法的对象引用），都是从父类Reference继承下来的。在父类Reference中，有两个成员变量pendingNext和referent。前者用来将相同类型的引用对象链接起来形成一个链表，等待GC处理，只在虚拟机内部使用，后者指向目标对象。&lt;/p&gt;
+&lt;/blockquote&gt;
 </content>
     
     <summary type="html">
