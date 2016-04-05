@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-29T05:17:23.090Z</updated>
+  <updated>2016-04-05T04:47:25.275Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,89 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面试问题总结（二）</title>
+    <link href="http://yoursite.com/2016/04/04/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>http://yoursite.com/2016/04/04/面试问题总结（二）/</id>
+    <published>2016-04-04T14:23:01.000Z</published>
+    <updated>2016-04-05T04:47:25.275Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[Java] 各种 XXXMap 的底层实现~ （听说这个是面Android时遇到的问题蛤 O.O）&lt;/li&gt;
+&lt;li&gt;[操作系统] 进程状态的转换/&lt;/li&gt;
+&lt;li&gt;[计网] 七层协议/三次握手过程/网关是怎么区分内网不同的机器的/内部的机器的IP与外界交互的过程是什么/端口的作用/迅雷如何实现限速/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[Java] 各种 XXXMap 的底层实现~ （听说这个是面Android时遇到的问题蛤 O.O）&lt;/li&gt;
+&lt;li&gt;[操作系统] 进程状态的转换/&lt;/li&gt;
+&lt;li&gt;[计网] 七层协议/三次握手过程/网关是怎么区分内网不同的机器的/内部的机器的IP与外界交互的过程是什么/端口的作用/迅雷如何实现限速/&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>笔试问题总结（一）</title>
+    <link href="http://yoursite.com/2016/04/04/%E7%AC%94%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://yoursite.com/2016/04/04/笔试问题总结（一）/</id>
+    <published>2016-04-04T04:01:11.000Z</published>
+    <updated>2016-04-05T04:18:30.862Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;昨晚做了 &lt;strong&gt;腾讯-移动端&lt;/strong&gt; 的笔试，包括选择题和问答题。&lt;/p&gt;
+&lt;p&gt;选择题主要有c++，数据库，数据结构，ios/android;&lt;/p&gt;
+&lt;p&gt;问答题共四道：两道编程题（字符串处理，动态规划）不是很难，一道关于PVP游戏技术方面的开放性问题，一道关于Android中AsynTask底层的代码题。&lt;/p&gt;
+&lt;p&gt;挑一些重要的说：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[DB] 在一组数据的int字段（包含有null值）上排序的结果集 &lt;/li&gt;
+&lt;li&gt;[Android] 关于Android 的垃圾回收机制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;数据库中NULL的排序（比较）问题&quot;&gt;&lt;a href=&quot;#数据库中NULL的排序（比较）问题&quot; class=&quot;headerlink&quot; title=&quot;数据库中NULL的排序（比较）问题&quot;&gt;&lt;/a&gt;数据库中NULL的排序（比较）问题&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;在数据库中，判定是否为null的语句是 is (not) null&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne1.png&quot; alt=&quot;测试一&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne2.png&quot; alt=&quot;测试二&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne3.png&quot; alt=&quot;测试三&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;关于Android-的垃圾回收机制&quot;&gt;&lt;a href=&quot;#关于Android-的垃圾回收机制&quot; class=&quot;headerlink&quot; title=&quot;关于Android 的垃圾回收机制&quot;&gt;&lt;/a&gt;关于Android 的垃圾回收机制&lt;/h1&gt;&lt;p&gt;关于&lt;strong&gt;Android - GC&lt;/strong&gt;出现了两个选项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在GC发生时，会暂停Activity/Service的运行？&lt;/li&gt;
+&lt;li&gt;在GC_EXPLICIT发生时，软引用会被清除？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为了了解Android的GC 过程，参考以下文章：&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/luoshengyang/article/details/41822747&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dalvik虚拟机垃圾收集（GC）过程分析&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;昨晚做了 &lt;strong&gt;腾讯-移动端&lt;/strong&gt; 的笔试，包括选择题和问答题。&lt;/p&gt;
+&lt;p&gt;选择题主要有c++，数据库，数据结构，ios/android;&lt;/p&gt;
+&lt;p&gt;问答题共四道：两道编程题（字符串处理，动态规划）不是很难，一道关于PVP游戏技术方面的开放性问题，一道关于Android中AsynTask底层的代码题。&lt;/p&gt;
+&lt;p&gt;挑一些重要的说：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[DB] 在一组数据的int字段（包含有null值）上排序的结果集 &lt;/li&gt;
+&lt;li&gt;[Android] 关于Android 的垃圾回收机制&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="DB" scheme="http://yoursite.com/tags/DB/"/>
+    
+  </entry>
   
   <entry>
     <title>面试问题总结（一）</title>
