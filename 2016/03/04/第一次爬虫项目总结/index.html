@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/03/04/第一次爬虫项目总结/index.html">
 <meta property="og:site_name" content="Pantsu's Blog">
 <meta property="og:description" content="简述首先，我学习Python的动机是 爬虫，因为之前的比赛中接触过一个有关空气污染的大数据项目，还有舍友在做课设时用爬虫爬取全济南市的公交站信息。其次，现在大数据已经逐渐流行起来，而爬虫是获取数据的最有效手段。">
-<meta property="og:updated_time" content="2016-04-06T09:50:32.824Z">
+<meta property="og:updated_time" content="2016-04-06T11:30:32.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello Python">
 <meta name="twitter:description" content="简述首先，我学习Python的动机是 爬虫，因为之前的比赛中接触过一个有关空气污染的大数据项目，还有舍友在做课设时用爬虫爬取全济南市的公交站信息。其次，现在大数据已经逐渐流行起来，而爬虫是获取数据的最有效手段。">
@@ -329,7 +329,7 @@
 <p>Python爬虫最为有名的Scrapy框架也只支持Python2。</p>
 </blockquote>
 <h1 id="练习阶段"><a href="#练习阶段" class="headerlink" title="练习阶段"></a>练习阶段</h1><h2 id="爬取简单网页信息"><a href="#爬取简单网页信息" class="headerlink" title="爬取简单网页信息"></a>爬取简单网页信息</h2><p>主要是利用urllib请求网页，必要时可以用CookieJar自动保存Cookie信息。</p>
-<h2 id="提取简单文字、图片"><a href="#提取简单文字、图片" class="headerlink" title="提取简单文字、图片"></a>提取简单文字、图片</h2><p>第一种方法： 用正则表达式提取相关信息，需要引入<strong>re</strong>这个库；<br>第二种方法： 在Scrapy框架中利用<strong>XPATH</strong>可以方便的提取标签及其属性、内容~</p>
+<h2 id="提取简单文字、图片"><a href="#提取简单文字、图片" class="headerlink" title="提取简单文字、图片"></a>提取简单文字、图片</h2><p>第一种方法： 用正则表达式提取相关信息，需要引入<strong>re</strong>这个库，主要方法：<strong>findall</strong>, <strong>search</strong>, <strong>match</strong>, <strong>sub</strong>；<br>第二种方法： 在Scrapy框架中利用<strong>XPATH</strong>可以方便的提取标签及其属性、内容~</p>
 <h2 id="爬取特殊的网站信息"><a href="#爬取特殊的网站信息" class="headerlink" title="爬取特殊的网站信息"></a>爬取特殊的网站信息</h2><p>比如Bilibili的网站，直接爬取所得的HTML只是包括一个网页框架，通过 <strong>Firefox-F12-网络</strong>可以看到，网站的主要信息是通过JS分部加载的，而网页的图片URL、文本等信息是通过请求一个JSON数据包获取的。</p>
 <blockquote>
 <p>针对这类网站：<br>（1）直接仿照网站请求相应的JSON（较快） (2)模拟浏览器加载完毕后，获取网页内容（较慢）</p>
