@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -59,16 +59,19 @@
 
 
 
-<meta name="description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；">
+<meta name="description" content="简述首先，我学习Python的动机是 爬虫，因为之前的比赛中接触过一个有关空气污染的大数据项目，还有舍友在做课设时用爬虫爬取全济南市的公交站信息。 
+其次，现在大数据已经逐渐流行起来，而爬虫是获取数据的最有效手段。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android优化">
-<meta property="og:url" content="http://yoursite.com/2016/04/05/Android相关优化/index.html">
+<meta property="og:title" content="Hello Python">
+<meta property="og:url" content="http://yoursite.com/2016/03/04/第一次爬虫项目总结/index.html">
 <meta property="og:site_name" content="Pantsu's Blog">
-<meta property="og:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；">
-<meta property="og:updated_time" content="2016-04-05T12:28:22.846Z">
+<meta property="og:description" content="简述首先，我学习Python的动机是 爬虫，因为之前的比赛中接触过一个有关空气污染的大数据项目，还有舍友在做课设时用爬虫爬取全济南市的公交站信息。 
+其次，现在大数据已经逐渐流行起来，而爬虫是获取数据的最有效手段。">
+<meta property="og:updated_time" content="2016-04-06T08:46:17.030Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android优化">
-<meta name="twitter:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；">
+<meta name="twitter:title" content="Hello Python">
+<meta name="twitter:description" content="简述首先，我学习Python的动机是 爬虫，因为之前的比赛中接触过一个有关空气污染的大数据项目，还有舍友在做课设时用爬虫爬取全济南市的公交站信息。 
+其次，现在大数据已经逐渐流行起来，而爬虫是获取数据的最有效手段。">
 
 
 
@@ -86,7 +89,7 @@
   };
 </script>
 
-  <title> Android优化 | Pantsu's Blog </title>
+  <title> Hello Python | Pantsu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +259,7 @@
             
             
               
-                Android优化
+                Hello Python
               
             
           </h1>
@@ -268,8 +271,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-05T23:21:04+08:00" content="2016-04-05">
-              2016-04-05
+            <time itemprop="dateCreated" datetime="2016-03-04T20:05:44+08:00" content="2016-03-04">
+              2016-03-04
             </time>
           </span>
 
@@ -282,8 +285,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -298,8 +301,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/05/Android相关优化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/Android相关优化/" itemprop="commentsCount"></span>
+                <a href="/2016/03/04/第一次爬虫项目总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/04/第一次爬虫项目总结/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -321,9 +324,43 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。<br>因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 <strong>内存优化</strong>很重要，主要针对占内存比较大的资源，如 <strong>Bitmap</strong> ； 有时需要频繁访问网络获取数据时， 有必要进行<strong>网络访问优化</strong>；</p>
+        <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>首先，我学习Python的动机是 <strong>爬虫</strong>，因为之前的比赛中接触过一个有关空气污染的大数据项目，还有舍友在做课设时用爬虫爬取全济南市的公交站信息。 </p>
+<p>其次，现在大数据已经逐渐流行起来，而爬虫是获取数据的最有效手段。</p>
 <a id="more"></a>
-<h1 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h1><p>首先，不得不提到Java的垃圾回收（GC）机制和四种对象的引用级别~</p>
+<h1 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h1><p>从一开始下载PyCharm，配置Python环境变量，到在W3CSCHOOL上学习语法、数据类型等，只花费了两天时间； 后来又认识到Python版本的问题，调查后知道了Python2/3的区别，特别是在爬虫方面，</p>
+<blockquote>
+<p>原本爬虫的类库都是支持Python2.7的，在Python3出现后，仍有部分库不支持Python3。</p>
+<p>Python爬虫最为有名的Scrapy框架也只支持Python2。</p>
+</blockquote>
+<h1 id="练习阶段"><a href="#练习阶段" class="headerlink" title="练习阶段"></a>练习阶段</h1><p>##爬取简单网页信息<br>主要是利用</p>
+<p>##提取简单文字、图片</p>
+<p>##爬取特殊的网站信息<br>比如Bilibili的网站，直接爬取所得的HTML只是包括一个网页框架，通过 <strong>Firefox-F12-网络</strong>可以看到，网站的主要信息是通过JS分部加载的，而网页的图片URL、文本等信息是通过请求一个JSON数据包获取的。</p>
+<blockquote>
+<p>针对这类网站 （1）直接仿照网站请求相应的JSON（较快） (2)模拟浏览器加载完毕后，获取网页内容（较慢）</p>
+</blockquote>
+<p><strong>注：Bilibili可以申请相应的 api-key，可以通过API访问Bilibili的数据库</strong></p>
+<p>##爬取项目经验<br>舍友接到了爬虫的项目，要爬取<strong><a href="https://www.tripadvisor.co.uk" target="_blank" rel="external">https://www.tripadvisor.co.uk</a></strong>上所有伦敦区的Hotel的酒店信息以及所有评论的信息。 爬取总共1063的酒店信息并不难，所有评论预计有60W条，访问MySQL数据库用的是MySQLdb的库~</p>
+<p>###难点的解决：<br><strong>Problem 1:</strong> 在评论过长的情况下，只有点击 –more–才会在cookie中加载全部评论信息！</p>
+<blockquote>
+<p>用PhantomJS工具，模拟浏览器访问界面，并且可以插入运行JS，实现在开发者模式中调试的功能。</p>
+<p>最后实现的效果是，加载页面后如果有弹窗就关闭，并模拟点击more加载全部数据，等待加载完成后，输出全部页面内容，返回到Python代码中进行处理~ （代码在后）</p>
+</blockquote>
+<p><strong>Problem 2:</strong> 为爬取酒店设置断点</p>
+<blockquote>
+<p>因为网站结构比较复杂，一开始程序崩的比较严重，就在酒店列表中设置了<strong>current_page</strong>这一字段对应于<strong>total_page</strong>，只有成功爬取时才会+1；特殊情况下，成功爬去但不会+1，重复爬取的界面可以后期在数据库中去重~</p>
+</blockquote>
+<p><strong>Problem 3:</strong> 用多线程加快爬取速度</p>
+<blockquote>
+<p>用Python内置的threading库实现多线程，然而速度并没有提升…原因是threading虽然实现了多线程，可是并没有并行处理，只是分时占用一个CPU~</p>
+<p>之后用到了threading的增强版———multiprocessing，可以真正利用电脑的多CPU进行并行处理~</p>
+</blockquote>
+<p><strong>Problem 4:</strong> 因为是英国的网站，学校网很渣，即便是在阿里云上也很慢（况且学生版只有一个CPU），不得不在调试好程序之后在雇主那边运行； 应雇主的要求，如果能两台电脑都用上就好了 Orz~ </p>
+<blockquote>
+<p>之后将自动更新断点的酒店列表上传至服务器的数据库，将酒店分好段，在雇主的两台Mac上同时爬存在本地，最后合并数据库~</p>
+</blockquote>
+<p>###主要代码</p>
+<h4 id="调用PhantomJS的Python代码"><a href="#调用PhantomJS的Python代码" class="headerlink" title="调用PhantomJS的Python代码"></a>调用PhantomJS的Python代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getDom</span><span class="params">(url)</span>:</span></span><br><span class="line">    cmd = <span class="string">'phantomjs ./constructDom.js "%s"'</span> % url</span><br><span class="line">    stdout, stderr = subprocess.Popen(cmd, shell=<span class="keyword">True</span>, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()</span><br><span class="line">    <span class="keyword">print</span> stderr</span><br><span class="line">    <span class="keyword">return</span> stdout</span><br></pre></td></tr></table></figure>
+<h4 id="PhantomJS运行JS代码"><a href="#PhantomJS运行JS代码" class="headerlink" title="PhantomJS运行JS代码"></a>PhantomJS运行JS代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> page = <span class="built_in">require</span>(<span class="string">'webpage'</span>).create(),</span><br><span class="line">    system = <span class="built_in">require</span>(<span class="string">'system'</span>),</span><br><span class="line">    address;</span><br><span class="line"></span><br><span class="line">page.settings.userAgent = <span class="string">"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.101 Safari/537.36"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (system.args.length === <span class="number">1</span>) &#123;</span><br><span class="line">    phantom.exit(<span class="number">1</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    address = system.args[<span class="number">1</span>];</span><br><span class="line">    page.open(address, <span class="function"><span class="keyword">function</span> (<span class="params">status</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        page.evaluate( <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="built_in">document</span>.getElementsByClassName(<span class="string">'moreLink'</span>)[<span class="number">0</span>].click();</span><br><span class="line">                    <span class="built_in">document</span>.getElementsByClassName(<span class="string">'moreLink'</span>)[<span class="number">1</span>].click();</span><br><span class="line">                    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="built_in">document</span>.getElementsByClassName(<span class="string">'xCloseGreen'</span>)[<span class="number">0</span>].click();</span><br><span class="line">                        <span class="built_in">document</span>.getElementsByClassName(<span class="string">'moreLink'</span>)[<span class="number">0</span>].click();</span><br><span class="line">                    &#125;, <span class="number">2000</span>);</span><br><span class="line">                    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="built_in">document</span>.getElementsByClassName(<span class="string">'xCloseGreen'</span>)[<span class="number">0</span>].click();</span><br><span class="line">                        <span class="built_in">document</span>.getElementsByClassName(<span class="string">'moreLink'</span>)[<span class="number">0</span>].click();</span><br><span class="line">                    &#125;, <span class="number">4700</span>);</span><br><span class="line"></span><br><span class="line">             &#125;</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(page.content);</span><br><span class="line">            phantom.exit();</span><br><span class="line">        &#125;, <span class="number">6000</span>);</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -338,7 +375,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
         </div>
       
@@ -347,13 +384,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/04/面试问题总结（二）/" rel="next" title="面试问题总结（二）">
-                <i class="fa fa-chevron-left"></i> 面试问题总结（二）
+              <a href="/2016/02/17/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/17/Android 自定义View—动态图播放/" rel="prev" title="Android 自定义View—动态图播放">
+                Android 自定义View—动态图播放 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -368,10 +409,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/05/Android相关优化/"
-     data-title="Android优化"
+        <div class="ds-share flat" data-thread-key="2016/03/04/第一次爬虫项目总结/"
+     data-title="Hello Python"
      data-content=""
-     data-url="http://yoursite.com/2016/04/05/Android相关优化/">
+     data-url="http://yoursite.com/2016/03/04/第一次爬虫项目总结/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -398,8 +439,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/05/Android相关优化/"
-           data-title="Android优化" data-url="http://yoursite.com/2016/04/05/Android相关优化/">
+      <div class="ds-thread" data-thread-key="2016/03/04/第一次爬虫项目总结/"
+           data-title="Hello Python" data-url="http://yoursite.com/2016/03/04/第一次爬虫项目总结/">
       </div>
     
   </div>
@@ -520,7 +561,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存优化"><span class="nav-number">2.</span> <span class="nav-text">内存优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简述"><span class="nav-number">1.</span> <span class="nav-text">简述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习收获"><span class="nav-number">2.</span> <span class="nav-text">学习收获</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练习阶段"><span class="nav-number">3.</span> <span class="nav-text">练习阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#调用PhantomJS的Python代码"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">调用PhantomJS的Python代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PhantomJS运行JS代码"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">PhantomJS运行JS代码</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
