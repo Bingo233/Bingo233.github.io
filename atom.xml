@@ -390,10 +390,9 @@
     <link href="http://yoursite.com/2016/03/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2016/03/04/第一次爬虫项目总结/</id>
     <published>2016-03-04T12:05:44.000Z</published>
-    <updated>2016-04-06T09:37:28.484Z</updated>
+    <updated>2016-04-06T09:38:33.200Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;首先，我学习Python的动机是 &lt;strong&gt;爬虫&lt;/strong&gt;，因为之前的比赛中接触过一个有关空气污染的大数据项目，还有舍友在做课设时用爬虫爬取全济南市的公交站信息。 &lt;/p&gt;
-&lt;p&gt;其次，现在大数据已经逐渐流行起来，而爬虫是获取数据的最有效手段。&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;首先，我学习Python的动机是 &lt;strong&gt;爬虫&lt;/strong&gt;，因为之前的比赛中接触过一个有关空气污染的大数据项目，还有舍友在做课设时用爬虫爬取全济南市的公交站信息。&lt;br&gt;其次，现在大数据已经逐渐流行起来，而爬虫是获取数据的最有效手段。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;学习收获&quot;&gt;&lt;a href=&quot;#学习收获&quot; class=&quot;headerlink&quot; title=&quot;学习收获&quot;&gt;&lt;/a&gt;学习收获&lt;/h1&gt;&lt;p&gt;从一开始下载PyCharm，配置Python环境变量，到在W3CSCHOOL上学习语法、数据类型等，只花费了两天时间； 后来又认识到Python版本的问题，调查后知道了Python2/3的区别，特别是在爬虫方面，&lt;/p&gt;
 &lt;blockquote&gt;
@@ -432,8 +431,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;首先，我学习Python的动机是 &lt;strong&gt;爬虫&lt;/strong&gt;，因为之前的比赛中接触过一个有关空气污染的大数据项目，还有舍友在做课设时用爬虫爬取全济南市的公交站信息。 &lt;/p&gt;
-&lt;p&gt;其次，现在大数据已经逐渐流行起来，而爬虫是获取数据的最有效手段。&lt;/p&gt;
+      &lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;首先，我学习Python的动机是 &lt;strong&gt;爬虫&lt;/strong&gt;，因为之前的比赛中接触过一个有关空气污染的大数据项目，还有舍友在做课设时用爬虫爬取全济南市的公交站信息。&lt;br&gt;其次，现在大数据已经逐渐流行起来，而爬虫是获取数据的最有效手段。&lt;/p&gt;
     
     </summary>
     
