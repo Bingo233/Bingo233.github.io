@@ -390,7 +390,7 @@
     <link href="http://yoursite.com/2016/03/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2016/03/04/第一次爬虫项目总结/</id>
     <published>2016-03-04T12:05:44.000Z</published>
-    <updated>2016-04-06T12:18:28.582Z</updated>
+    <updated>2016-04-06T12:19:23.197Z</updated>
     
     <content type="html">&lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;首先，我学习Python的动机是 &lt;strong&gt;爬虫&lt;/strong&gt;，因为之前的比赛中接触过一个有关空气污染的大数据项目，还有舍友在做课设时用爬虫爬取全济南市的公交站信息。&lt;br&gt;其次，现在大数据已经逐渐流行起来，而爬虫是获取数据的最有效手段。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -399,7 +399,7 @@
 &lt;p&gt;原本爬虫的类库都是支持Python2.7的，在Python3出现后，仍有部分库不支持Python3。&lt;/p&gt;
 &lt;p&gt;Python爬虫最为有名的Scrapy框架也只支持Python2。&lt;/p&gt;
 &lt;p&gt;Python2中的urllib、urllib2在Python3中合并为urllib。&lt;/p&gt;
-&lt;p&gt;请求网页时，Python2用urllib.urlopen(url)和urllib2.urlopen(url,header)，Python3用urllib.request.urlopen(url)&lt;/p&gt;
+&lt;p&gt;请求网页时，Python2用urllib.urlopen(url)或urllib2.urlopen(url,header)，Python3用urllib.request.urlopen(url)&lt;/p&gt;
 &lt;p&gt;Python2中用cookielib.CookieJar()，Python3中用http.cookiejar.CookieJar()。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;练习阶段&quot;&gt;&lt;a href=&quot;#练习阶段&quot; class=&quot;headerlink&quot; title=&quot;练习阶段&quot;&gt;&lt;/a&gt;练习阶段&lt;/h1&gt;&lt;h2 id=&quot;爬取简单网页信息&quot;&gt;&lt;a href=&quot;#爬取简单网页信息&quot; class=&quot;headerlink&quot; title=&quot;爬取简单网页信息&quot;&gt;&lt;/a&gt;爬取简单网页信息&lt;/h2&gt;&lt;p&gt;主要是利用urllib请求网页，必要时可以用CookieJar自动保存Cookie信息。&lt;/p&gt;
