@@ -57,16 +57,19 @@
 
 
 
-<meta name="description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；">
+<meta name="description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；
+（部分总结自 Android开发艺术探索-Android性能优化）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android优化">
 <meta property="og:url" content="http://yoursite.com/2016/04/05/Android相关优化/index.html">
 <meta property="og:site_name" content="Pantsu's Blog">
-<meta property="og:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；">
-<meta property="og:updated_time" content="2016-04-05T12:28:24.000Z">
+<meta property="og:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；
+（部分总结自 Android开发艺术探索-Android性能优化）">
+<meta property="og:updated_time" content="2016-04-13T07:46:25.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android优化">
-<meta name="twitter:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；">
+<meta name="twitter:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；
+（部分总结自 Android开发艺术探索-Android性能优化）">
 
 
 
@@ -320,8 +323,49 @@
 
       
         <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。<br>因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 <strong>内存优化</strong>很重要，主要针对占内存比较大的资源，如 <strong>Bitmap</strong> ； 有时需要频繁访问网络获取数据时， 有必要进行<strong>网络访问优化</strong>；</p>
+<p>（部分总结自 <strong>Android开发艺术探索</strong>-<strong>Android性能优化</strong>）</p>
 <a id="more"></a>
-<h1 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h1><p>首先，不得不提到Java的垃圾回收（GC）机制和四种对象的引用级别~</p>
+<h1 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h1><h2 id="善用垃圾回收"><a href="#善用垃圾回收" class="headerlink" title="善用垃圾回收"></a>善用垃圾回收</h2><p>比如回收Bimap：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(bitmap != <span class="keyword">null</span> &amp;&amp; !bitmap.isRecycled()) &#123;</span><br><span class="line">	bitmap.recycle();</span><br><span class="line">	bitmap = <span class="keyword">null</span>;</span><br><span class="line">	System.gc();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在bitmap.recyle()的实现中，除了mRecycle=true外，还有多个内部byte[]被设为null。<br>这是因为Dalvik虚拟机会启动一个GC线程自动回收，而将不用的对象显式地设为Null,有利于GC收集器判定垃圾。</p>
+<blockquote>
+<p>触发主GC(Garbage Collector)的条件:<br>　JVM进行次GC的频率很高,但因为这种GC占用时间极短,所以对系统产生的影响不大。更值得关注的是主GC的触发条件,因为它对系统影响很明显。总的来说,有两个条件会触发主GC:<br>　①当应用程序空闲时,即没有应用线程在运行时,GC会被调用。因为GC在优先级最低的线程中进行,所以当应用忙时,GC线程就不会被调用,但以下条件除外。<br>　②Java堆内存不足时,GC会被调用。当应用线程在运行,并在运行过程中创建新对象,若这时内存空间不足,JVM就会强制地调用GC线程,以便回收内存用于新的分配。若GC一次之后仍不能满足内存分配的要求,JVM会再进行两次GC作进一步的尝试,若仍无法满足要求,则 JVM将报“out of memory”的错误,Java应用将停止。</p>
+</blockquote>
+<p>dalvik虚拟机使用常用的<strong>Mark-Sweep算法</strong>，在android2.3之前，有以下几个特点：</p>
+<ol>
+<li>垃圾收集线程在执行的时候，其它线程都停止。</li>
+<li>一次收集完全部的垃圾</li>
+<li>一次垃圾收集通常造成用户程序中断100ms以上</li>
+</ol>
+<p>在android2.3之后，垃圾收集机制得到了改进：</p>
+<ol>
+<li>垃圾收集线程和其它线程并发执行</li>
+<li>一次可能只收集一部分垃圾</li>
+<li>一次垃圾回收，造成的中断时间小于5ms</li>
+</ol>
+<p><strong>关于垃圾回收：</strong></p>
+<ul>
+<li>不要过多调用System.gc() -&gt; 导致调用主GC，增加系统卡顿的次数</li>
+<li>尽量少用静态对象变量 -&gt; 静态变量属于全局变量,不会被GC回收,它们会一直占用内存</li>
+<li>尽量减少临时对象的使用 -&gt;  过多的临时对象创建时在堆内存中分配空间，容易引起主GC</li>
+</ul>
+<h2 id="善用软引用、弱引用"><a href="#善用软引用、弱引用" class="headerlink" title="善用软引用、弱引用"></a>善用软引用、弱引用</h2><p>Java共有4种引用类型，</p>
+<h1 id="布局优化"><a href="#布局优化" class="headerlink" title="布局优化"></a>布局优化</h1><p>思想：尽量减少布局文件的层级，可以利用<include>、<merge>以及ViewStub。</merge></include></p>
+<h1 id="绘制优化"><a href="#绘制优化" class="headerlink" title="绘制优化"></a>绘制优化</h1><p>思想：onDraw方法中避免执行大量的操作，google标准：60fps</p>
+<ol>
+<li>onDraw中不要创建新的局部变量</li>
+<li>onDraw方法中不要做耗时任务</li>
+</ol>
+<h1 id="内存泄漏优化"><a href="#内存泄漏优化" class="headerlink" title="内存泄漏优化"></a>内存泄漏优化</h1><ol>
+<li>静态变量引用</li>
+<li>单例模式持有引用</li>
+<li>无限循环的属性动画 - 在onDestroy中调用animator.cancel()</li>
+</ol>
+<h1 id="响应速度优化"><a href="#响应速度优化" class="headerlink" title="响应速度优化"></a>响应速度优化</h1><p>思想：避免在主线程中执行耗时操作，可以采用异步的方式在非主线程执行<br>提示: KeyDispatchingTimeout (5s), BroadcastTimeout (10s), ServiceTimeout (20s)</p>
+<h1 id="ListView优化"><a href="#ListView优化" class="headerlink" title="ListView优化"></a>ListView优化</h1><ol>
+<li>采用ViewHolder并避免在getView中执行耗时操作</li>
+<li>开启硬件加速</li>
+</ol>
+<h2 id="线程优化"><a href="#线程优化" class="headerlink" title="线程优化"></a>线程优化</h2><p>采用线程池，避免大量线程创建和销毁时所带来的时间/内存开销。</p>
 
       
     </div>
@@ -511,7 +555,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存优化"><span class="nav-number">2.</span> <span class="nav-text">内存优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存优化"><span class="nav-number">2.</span> <span class="nav-text">内存优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#善用垃圾回收"><span class="nav-number">2.1.</span> <span class="nav-text">善用垃圾回收</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#善用软引用、弱引用"><span class="nav-number">2.2.</span> <span class="nav-text">善用软引用、弱引用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#布局优化"><span class="nav-number">3.</span> <span class="nav-text">布局优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制优化"><span class="nav-number">4.</span> <span class="nav-text">绘制优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存泄漏优化"><span class="nav-number">5.</span> <span class="nav-text">内存泄漏优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#响应速度优化"><span class="nav-number">6.</span> <span class="nav-text">响应速度优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ListView优化"><span class="nav-number">7.</span> <span class="nav-text">ListView优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程优化"><span class="nav-number">7.1.</span> <span class="nav-text">线程优化</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
