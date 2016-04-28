@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Pantsu's Blog">
 <meta property="og:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；
 （部分总结自 Android开发艺术探索-Android性能优化）">
-<meta property="og:updated_time" content="2016-04-13T14:24:56.418Z">
+<meta property="og:updated_time" content="2016-04-14T12:53:49.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android优化">
 <meta name="twitter:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；
@@ -330,18 +330,11 @@
 <blockquote>
 <p>触发主GC(Garbage Collector)的条件:<br>　JVM进行次GC的频率很高,但因为这种GC占用时间极短,所以对系统产生的影响不大。更值得关注的是主GC的触发条件,因为它对系统影响很明显。总的来说,有两个条件会触发主GC:<br>　①当应用程序空闲时,即没有应用线程在运行时,GC会被调用。因为GC在优先级最低的线程中进行,所以当应用忙时,GC线程就不会被调用,但以下条件除外。<br>　②Java堆内存不足时,GC会被调用。当应用线程在运行,并在运行过程中创建新对象,若这时内存空间不足,JVM就会强制地调用GC线程,以便回收内存用于新的分配。若GC一次之后仍不能满足内存分配的要求,JVM会再进行两次GC作进一步的尝试,若仍无法满足要求,则 JVM将报“out of memory”的错误,Java应用将停止。</p>
 </blockquote>
-<p>dalvik虚拟机使用常用的<strong>Mark-Sweep算法</strong>，在android2.3之前，有以下几个特点：</p>
-<ol>
-<li>垃圾收集线程在执行的时候，其它线程都停止。</li>
-<li>一次收集完全部的垃圾</li>
-<li>一次垃圾收集通常造成用户程序中断100ms以上</li>
-</ol>
-<p>在android2.3之后，垃圾收集机制得到了改进，在Mark阶段是并发执行的，而为了回收内存，Sweep阶段必须暂停虚拟机，这就导致了：</p>
-<ol>
-<li>垃圾收集线程和其它线程并发执行</li>
-<li>一次可能只收集一部分垃圾</li>
-<li>一次垃圾回收，造成的中断时间小于5ms</li>
-</ol>
+<p>dalvik虚拟机使用常用的<strong>Mark-Sweep算法</strong>，缺点是容易导致内存碎片，而当我们有大量不连续小内存的时候，再分配一个较大对象时，还是会非常容易导致GC！ 因此，</p>
+<ul>
+<li>首先要尽量避免掉频繁生成很多临时小变量（比如说：getView, onDraw等函数中new对象）</li>
+<li>其次要尽量去避免产生很多长生命周期的大对象</li>
+</ul>
 <p><strong>关于垃圾回收：</strong></p>
 <ul>
 <li>不要过多调用System.gc() -&gt; 导致调用主GC，增加系统卡顿的次数</li>

@@ -442,17 +442,22 @@
 
       
         
-          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~</p>
+          
+            <a id="more"></a>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~</p>
 <ul>
 <li>[Java] 各种 XXXMap 的底层实现~ / volatile修饰符的作用~ / </li>
 <li>[操作系统] 进程状态的转换 / </li>
 <li>[计网] 七层协议 / 三次握手过程 / 网关是怎么区分内网不同的机器的 / 内部的机器的IP与外界交互的过程是什么 / 端口的作用 / 迅雷如何实现限速 /</li>
 </ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/04/面试问题总结（二）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<h1 id="关于Java"><a href="#关于Java" class="headerlink" title="关于Java"></a>关于Java</h1><p>volatile修饰符的作用</p>
+<blockquote>
+<p>编译器对访问该变量的代码就不再进行优化，从而可以提供对特殊地址的稳定访问。<br>所谓稳定访问，即每次访问时不访问缓存的值，直接从内存获取。</p>
+</blockquote>
+<p>简单地说就是防止编译器对代码进行优化.比如如下程序,编译器会自动忽略前三条语句~<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x55</span>;</span><br><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x56</span>;</span><br><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x57</span>;</span><br><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x58</span>;</span><br></pre></td></tr></table></figure></p>
+<p>下面的函数被用来计算某个整数的平方，它不能实现预期设计目标<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">square</span><span class="params">(<span class="keyword">volatile</span> <span class="keyword">int</span> *ptr)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    return ((*ptr) * (*ptr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+          
         
       
     </div>
@@ -564,7 +569,9 @@
 
       
         
-          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>昨晚做了 <strong>腾讯-移动端</strong> 的笔试，包括选择题和问答题。</p>
+          
+            <a id="more"></a>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>昨晚做了 <strong>腾讯-移动端</strong> 的笔试，包括选择题和问答题。</p>
 <p>选择题主要有c++，数据库，数据结构，ios/android;</p>
 <p>问答题共四道：两道编程题（字符串处理，动态规划）不是很难，一道关于PVP游戏技术方面的开放性问题，一道关于Android中AsynTask底层的代码题。</p>
 <p>挑一些重要的说：</p>
@@ -572,11 +579,48 @@
 <li>[DB] 在一组数据的int字段（包含有null值）上排序的结果集 </li>
 <li>[Android] 关于Android 的垃圾回收机制</li>
 </ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/04/笔试问题总结（一）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<h1 id="数据库中NULL的排序（比较）问题"><a href="#数据库中NULL的排序（比较）问题" class="headerlink" title="数据库中NULL的排序（比较）问题"></a>数据库中NULL的排序（比较）问题</h1><blockquote>
+<p>在数据库中，判定是否为null的语句是 is (not) null</p>
+</blockquote>
+<p><img src="http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne1.png" alt="测试一"><br><img src="http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne2.png" alt="测试二"><br><img src="http://7xs3wx.com1.z0.glb.clouddn.com/blog_ne3.png" alt="测试三"><br><br></p>
+<hr>
+
+<h1 id="关于Android-的垃圾回收机制"><a href="#关于Android-的垃圾回收机制" class="headerlink" title="关于Android 的垃圾回收机制"></a>关于Android 的垃圾回收机制</h1><p>关于<strong>Android - GC</strong>出现了两个选项：</p>
+<ul>
+<li>在GC发生时，会暂停Activity/Service的运行（挂起）？    - 可能会</li>
+<li>在GC_EXPLICIT发生时，软引用会被清除？     - 不会，但弱引用会被清除</li>
+</ul>
+<p>为了了解Android的GC 过程，参考以下文章：<br><strong><a href="http://blog.csdn.net/luoshengyang/article/details/41822747" target="_blank" rel="external">Dalvik虚拟机垃圾收集（GC）过程分析</a></strong></p>
+<h2 id="GC的种类"><a href="#GC的种类" class="headerlink" title="GC的种类"></a>GC的种类</h2><blockquote>
+<p>GC_MALLOC, 堆内存分配失败时触发<br>GC_CONCURRENT，当内存即将满时触发<br>GC_EXPLICIT，对垃圾收集的显式调用(System.gc)<br>GC_EXTERNAL_ALLOC，外部内存分配失败时触发</p>
+</blockquote>
+<h2 id="GC流程图"><a href="#GC流程图" class="headerlink" title="GC流程图"></a>GC流程图</h2><p><img src="http://7xs3wx.com1.z0.glb.clouddn.com/about_gc.jpg" alt="GC"></p>
+<blockquote>
+<p>通过这个流程可以看到，在对象的分配中会导致GC，第一次分配对象失败我们会触发GC但是不回收Soft的引用，如果再次分配还是失败我们就会将Soft的内存也给回收，前者触发的GC是GC_FOR_MALLOC类型的GC，后者是GC_BEFORE_OOM类型的GC。而当内存分配成功后，我们会判断当前的内存占用是否是达到了GC_CONCURRENT的阀值，如果达到了那么又会触发GC_CONCURRENT。</p>
+</blockquote>
+<h2 id="GC何时发生"><a href="#GC何时发生" class="headerlink" title="GC何时发生"></a>GC何时发生</h2><blockquote>
+<p>Dalvik虚拟机线程被挂起等待GC时，它们总是挂起在<strong>IF、GOTO、SWITCH、RETURN</strong>和<strong>THROW</strong>等跳转指令中。</p>
+</blockquote>
+<h2 id="GC是否并行，是否会挂起当前进程内的线程"><a href="#GC是否并行，是否会挂起当前进程内的线程" class="headerlink" title="GC是否并行，是否会挂起当前进程内的线程"></a>GC是否并行，是否会挂起当前进程内的线程</h2><blockquote>
+<p>并行和非并行GC的主要区别在于，前者在GC过程中，有条件地挂起和唤醒非GC线程，而后者在执行GC的过程中，一直都是挂起非GC线程的。 并行GC通过有条件地挂起和唤醒非GC线程，就可以使得应用程序获得更好的响应性。但是我们也应该看到，并行GC需要多执行一次标记根集对象以及递归标记那些在GC过程被访问了的对象的操作。<br>也就是说，并行GC在使用得应用程序获得更好的响应性的同时，也需要花费更多的CPU资源。</p>
+</blockquote>
+<h2 id="GC时引用对象的清除"><a href="#GC时引用对象的清除" class="headerlink" title="GC时引用对象的清除"></a>GC时引用对象的清除</h2><blockquote>
+<p>引用类型的对象，例如SoftReference、WeakReference、PhantomReference和FinalizerReference（重写了finalize方法的对象引用），都是从父类Reference继承下来的。在父类Reference中，有两个成员变量pendingNext和referent。前者用来将相同类型的引用对象链接起来形成一个链表，等待GC处理，只在虚拟机内部使用，后者指向目标对象。</p>
+</blockquote>
+<h2 id="GC的Mark-Sweep算法"><a href="#GC的Mark-Sweep算法" class="headerlink" title="GC的Mark-Sweep算法"></a>GC的Mark-Sweep算法</h2><p>在android2.3之前，有以下几个特点：</p>
+<ol>
+<li>垃圾收集线程在执行的时候，其它线程都停止。</li>
+<li>一次收集完全部的垃圾</li>
+<li>一次垃圾收集通常造成用户程序中断100ms以上</li>
+</ol>
+<p>在android2.3之后，垃圾收集机制得到了改进，在Mark阶段是并发执行的，而为了回收内存，Sweep阶段必须暂停虚拟机，这就导致了：</p>
+<ol>
+<li>垃圾收集线程和其它线程并发执行</li>
+<li>一次可能只收集一部分垃圾</li>
+<li>一次垃圾回收，造成的中断时间小于5ms</li>
+</ol>
+
+          
         
       
     </div>
