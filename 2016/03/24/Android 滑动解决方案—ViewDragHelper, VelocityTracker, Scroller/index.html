@@ -67,7 +67,7 @@
 <meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/shortcut_1.png">
 <meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/shortcut_2.png">
 <meta property="og:image" content="http://7xs3wx.com1.z0.glb.clouddn.com/shortcut_3.png">
-<meta property="og:updated_time" content="2016-04-28T12:51:44.071Z">
+<meta property="og:updated_time" content="2016-04-28T13:08:49.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 滑动解决方案—ViewDragHelper, VelocityTracker, Scroller">
 <meta name="twitter:description" content="简介这两天在深入研究 拖了很久的、一直困扰我的 滑动问题，之前略做过一些复杂的滑动冲突处理，但是有些滑动实现起来依然困难重重，比如这次的Demo中的第一个目标是实现 课程格子 中课程列表的多向滑动，利用双层嵌套ScrollView的做法在处理 滑动冲突 时较为复杂，而使用 ViewDragHelper 使我在数分钟之内就实现了比嵌套更好的效果~">
@@ -339,8 +339,8 @@
 <p>通过<strong>velTracker.getXVelocity()/getYVelocity()</strong>可获得当前速度，而这两个方法调用之前，必须调用<strong>computeCurrentVelocity(int units, float maxVelocity)</strong>设定速率并计算；<br>另外，<strong>ViewConfiguration.get(this).getMaximumFlingVelocity();</strong>用于获取系统最大速率。</p>
 <h2 id="DragViewHelper"><a href="#DragViewHelper" class="headerlink" title="DragViewHelper"></a>DragViewHelper</h2><p><strong>DragViewHelper</strong> 内部同样是利用Scroller、VelocityTracker来实现对捕捉到的View进行滑动，只要实现 tryCaptureView、clampViewPositionHorizontal/clampViewPositionVertical、onViewPositionChanged、onViewReleased即可简单方便地实现滑动，不仅如此，通过setEdgeTrackingEnabled并选择性实现onEdgeTouched，onEdgeDragStarted等方法，即可方便的检测边界拖动事件，实现如 DrawerLayout 的效果~</p>
 <h1 id="滑动实例"><a href="#滑动实例" class="headerlink" title="滑动实例"></a>滑动实例</h1><h2 id="课程格子-2重滑动冲突"><a href="#课程格子-2重滑动冲突" class="headerlink" title="课程格子 - 2重滑动冲突"></a>课程格子 - 2重滑动冲突</h2><p><img src="http://7xs3wx.com1.z0.glb.clouddn.com/shortcut.png" alt="滑动冲突"></p>
-<h2 id="小米时钟-3重滑动冲突"><a href="#小米时钟-3重滑动冲突" class="headerlink" title="小米时钟 - 3重滑动冲突"></a>小米时钟 - 3重滑动冲突</h2><p>因为ViewPager内部已经处理了Item的纵向滑动冲突，因此只需要稍微考虑一下ViewPager对Item处理的规则，然后解决外部拖动事件（ViewDragHelper）和ViewPager的冲突即可~<br><img src="http://7xs3wx.com1.z0.glb.clouddn.com/shortcut_1.png" alt="滑动冲突"></p>
-<h2 id="知乎主界面-实现滑动删除的RecyclerView"><a href="#知乎主界面-实现滑动删除的RecyclerView" class="headerlink" title="知乎主界面 - 实现滑动删除的RecyclerView"></a>知乎主界面 - 实现滑动删除的RecyclerView</h2><p>新建RecyclerView子类，加入ViewDragHelper，与super.onTouchEvent共同处理滑动<br><img src="http://7xs3wx.com1.z0.glb.clouddn.com/shortcut_2.png" alt="滑动冲突"></p>
+<h2 id="小米时钟-3重滑动冲突"><a href="#小米时钟-3重滑动冲突" class="headerlink" title="小米时钟 - 3重滑动冲突"></a>小米时钟 - 3重滑动冲突</h2><p>因为ViewPager内部已经处理了Item的纵向滑动冲突，因此只需要稍微考虑一下ViewPager对Item处理的规则，然后解决外部拖动事件（ViewDragHelper）和ViewPager的冲突即可~<br>PS: 利用 <strong>event = MotionEvent.obtain()</strong> 和 <strong>view.dispatchTouchEvent()</strong>可以模拟滑动事件。<br><img src="http://7xs3wx.com1.z0.glb.clouddn.com/shortcut_1.png" alt="滑动冲突"></p>
+<h2 id="知乎主界面-实现滑动删除的RecyclerView"><a href="#知乎主界面-实现滑动删除的RecyclerView" class="headerlink" title="知乎主界面 - 实现滑动删除的RecyclerView"></a>知乎主界面 - 实现滑动删除的RecyclerView</h2><p>新建RecyclerView子类，加入ViewDragHelper，与super.onTouchEvent共同处理滑动<br>Q：为什么用RecyclerView?<br>A：其实用ListView同样可以实现滑动删除，但RecyclerView的notifyItemRemove()会有很自然的Item动画! （PS: RecyclerView在部分adapter数据改变时可以只更新一部分Item）<br><img src="http://7xs3wx.com1.z0.glb.clouddn.com/shortcut_2.png" alt="滑动冲突"></p>
 <h2 id="知乎子界面-右滑返回"><a href="#知乎子界面-右滑返回" class="headerlink" title="知乎子界面 - 右滑返回"></a>知乎子界面 - 右滑返回</h2><p>主要步骤：</p>
 <ol>
 <li><p>设置Activity的style——windowIsTranslucent使顶层窗口透明<br>注：activity设置窗口透明会使界面中部分View背景变为透明，因此需要在子View中的适当位置重新设置background</p>
