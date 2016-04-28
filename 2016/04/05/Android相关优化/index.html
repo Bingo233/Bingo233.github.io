@@ -57,19 +57,16 @@
 
 
 
-<meta name="description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；
-（部分总结自 Android开发艺术探索-Android性能优化）">
+<meta name="description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。 因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android优化">
 <meta property="og:url" content="http://yoursite.com/2016/04/05/Android相关优化/index.html">
 <meta property="og:site_name" content="Pantsu's Blog">
-<meta property="og:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；
-（部分总结自 Android开发艺术探索-Android性能优化）">
-<meta property="og:updated_time" content="2016-04-14T12:53:49.881Z">
+<meta property="og:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。 因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化。">
+<meta property="og:updated_time" content="2016-04-28T13:12:44.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android优化">
-<meta name="twitter:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化；
-（部分总结自 Android开发艺术探索-Android性能优化）">
+<meta name="twitter:description" content="简介关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。 因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 内存优化很重要，主要针对占内存比较大的资源，如 Bitmap ； 有时需要频繁访问网络获取数据时， 有必要进行网络访问优化。">
 
 
 
@@ -322,9 +319,7 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。<br>因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 <strong>内存优化</strong>很重要，主要针对占内存比较大的资源，如 <strong>Bitmap</strong> ； 有时需要频繁访问网络获取数据时， 有必要进行<strong>网络访问优化</strong>；</p>
-<p>（部分总结自 <strong>Android开发艺术探索</strong>-<strong>Android性能优化</strong>）</p>
-<a id="more"></a>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>关于Android的优化，之前编程中遇到过不少，比如ImageLoader利用二级缓存优化图片加载。 因为每个Android进程运行的Dalvik虚拟机只会分配有限的内存，因此 <strong>内存优化</strong>很重要，主要针对占内存比较大的资源，如 <strong>Bitmap</strong> ； 有时需要频繁访问网络获取数据时， 有必要进行<strong>网络访问优化</strong>。<br><a id="more"></a><br>（部分总结自 <strong>Android开发艺术探索</strong>-<strong>Android性能优化</strong>）</p>
 <h1 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h1><h2 id="善用垃圾回收"><a href="#善用垃圾回收" class="headerlink" title="善用垃圾回收"></a>善用垃圾回收</h2><p>比如回收Bimap：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(bitmap != <span class="keyword">null</span> &amp;&amp; !bitmap.isRecycled()) &#123;</span><br><span class="line">	bitmap.recycle();</span><br><span class="line">	bitmap = <span class="keyword">null</span>;</span><br><span class="line">	System.gc();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在bitmap.recyle()的实现中，除了mRecycle=true外，还有多个内部byte[]被设为null。<br>这是因为Dalvik虚拟机会启动一个GC线程自动回收，而将不用的对象显式地设为Null,有利于GC收集器判定垃圾。</p>
 <blockquote>
