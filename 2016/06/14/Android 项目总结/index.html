@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="Android,网络," />
 
 
 
@@ -57,16 +57,19 @@
 
 
 
-<meta name="description" content="简介这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~">
+<meta name="description" content="#####最开始学习Android用的最多的就是URLConnection，后来网上有很多网络访问的库，比如支持断点续传等，功能比较强大； 然而个人觉得知识还是了解透彻一点比较好，单纯是为了能够有一天能够脱离这些工具库，就广泛研究了一下Android的网络机制。  
+基本内容： URLConnection以及子类HttpURLConnection，（HttpClient），Socket通信，Coo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试问题总结（二）">
-<meta property="og:url" content="http://yoursite.com/2016/04/04/面试问题总结（二）/index.html">
+<meta property="og:title" content="Android 网络通讯">
+<meta property="og:url" content="http://yoursite.com/2016/06/14/Android 项目总结/index.html">
 <meta property="og:site_name" content="Pantsu's Blog">
-<meta property="og:description" content="简介这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~">
-<meta property="og:updated_time" content="2016-04-28T13:10:38.305Z">
+<meta property="og:description" content="#####最开始学习Android用的最多的就是URLConnection，后来网上有很多网络访问的库，比如支持断点续传等，功能比较强大； 然而个人觉得知识还是了解透彻一点比较好，单纯是为了能够有一天能够脱离这些工具库，就广泛研究了一下Android的网络机制。  
+基本内容： URLConnection以及子类HttpURLConnection，（HttpClient），Socket通信，Coo">
+<meta property="og:updated_time" content="2016-06-15T05:00:28.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试问题总结（二）">
-<meta name="twitter:description" content="简介这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~">
+<meta name="twitter:title" content="Android 网络通讯">
+<meta name="twitter:description" content="#####最开始学习Android用的最多的就是URLConnection，后来网上有很多网络访问的库，比如支持断点续传等，功能比较强大； 然而个人觉得知识还是了解透彻一点比较好，单纯是为了能够有一天能够脱离这些工具库，就广泛研究了一下Android的网络机制。  
+基本内容： URLConnection以及子类HttpURLConnection，（HttpClient），Socket通信，Coo">
 
 
 
@@ -84,7 +87,7 @@
   };
 </script>
 
-  <title> 面试问题总结（二） | Pantsu's Blog </title>
+  <title> Android 网络通讯 | Pantsu's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -254,7 +257,7 @@
             
             
               
-                面试问题总结（二）
+                Android 网络通讯
               
             
           </h1>
@@ -266,8 +269,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-04T22:23:01+08:00" content="2016-04-04">
-              2016-04-04
+            <time itemprop="dateCreated" datetime="2016-06-14T12:40:57+08:00" content="2016-06-14">
+              2016-06-14
             </time>
           </span>
 
@@ -280,8 +283,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -296,8 +299,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/04/面试问题总结（二）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/04/面试问题总结（二）/" itemprop="commentsCount"></span>
+                <a href="/2016/06/14/Android 项目总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/14/Android 项目总结/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -319,19 +322,11 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这里总结了一些舍友的面经，一是为了补查只是漏洞，而是为接下来的面试做准备~<br><a id="more"></a></p>
-<ul>
-<li>[Java] 各种 XXXMap 的底层实现~ / volatile修饰符的作用~ / </li>
-<li>[操作系统] 进程状态的转换 / </li>
-<li>[计网] 七层协议 / 三次握手过程 / 网关是怎么区分内网不同的机器的 / 内部的机器的IP与外界交互的过程是什么 / 端口的作用 / 迅雷如何实现限速 /</li>
-</ul>
-<h1 id="关于Java"><a href="#关于Java" class="headerlink" title="关于Java"></a>关于Java</h1><p>volatile修饰符的作用</p>
-<blockquote>
-<p>编译器对访问该变量的代码就不再进行优化，从而可以提供对特殊地址的稳定访问。<br>所谓稳定访问，即每次访问时不访问缓存的值，直接从内存获取。</p>
-</blockquote>
-<p>简单地说就是防止编译器对代码进行优化.比如如下程序,编译器会自动忽略前三条语句~<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x55</span>;</span><br><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x56</span>;</span><br><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x57</span>;</span><br><span class="line">XBYTE[<span class="number">2</span>]=<span class="number">0x58</span>;</span><br></pre></td></tr></table></figure></p>
-<p>下面的函数被用来计算某个整数的平方，它不能实现预期设计目标<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">square</span><span class="params">(<span class="keyword">volatile</span> <span class="keyword">int</span> *ptr)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    return ((*ptr) * (*ptr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<hr>
+        <p>#####<br>最开始学习Android用的最多的就是URLConnection，后来网上有很多网络访问的库，比如支持断点续传等，功能比较强大； 然而个人觉得知识还是了解透彻一点比较好，单纯是为了能够有一天能够脱离这些工具库，就广泛研究了一下Android的网络机制。  </p>
+<p>基本内容： URLConnection以及子类HttpURLConnection，（HttpClient），Socket通信，Cookie的管理，<br>其他：    JSON数据解析，本地缓存策略，访问Web-Service，WebView运行网页中JS与安卓对象的交互 </p>
+<a id="more"></a>
+<p>##### </p>
+
       
     </div>
 
@@ -345,7 +340,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag">#Java</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/网络/" rel="tag">#网络</a>
           
         </div>
       
@@ -354,17 +351,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/04/笔试问题总结（一）/" rel="next" title="笔试问题总结（一）">
-                <i class="fa fa-chevron-left"></i> 笔试问题总结（一）
+              <a href="/2016/04/05/Android相关优化/" rel="next" title="Android优化">
+                <i class="fa fa-chevron-left"></i> Android优化
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/05/Android相关优化/" rel="prev" title="Android优化">
-                Android优化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -379,10 +372,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/04/面试问题总结（二）/"
-     data-title="面试问题总结（二）"
+        <div class="ds-share flat" data-thread-key="2016/06/14/Android 项目总结/"
+     data-title="Android 网络通讯"
      data-content=""
-     data-url="http://yoursite.com/2016/04/04/面试问题总结（二）/">
+     data-url="http://yoursite.com/2016/06/14/Android 项目总结/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -409,8 +402,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/04/面试问题总结（二）/"
-           data-title="面试问题总结（二）" data-url="http://yoursite.com/2016/04/04/面试问题总结（二）/">
+      <div class="ds-thread" data-thread-key="2016/06/14/Android 项目总结/"
+           data-title="Android 网络通讯" data-url="http://yoursite.com/2016/06/14/Android 项目总结/">
       </div>
     
   </div>
@@ -524,7 +517,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于Java"><span class="nav-number">2.</span> <span class="nav-text">关于Java</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
